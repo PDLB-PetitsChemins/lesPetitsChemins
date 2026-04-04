@@ -32,38 +32,97 @@ export function Countdown() {
     return () => window.clearInterval(timer);
   }, []);
 
-  const blocks = useMemo(
+  const timeBlocks = useMemo(
     () => [
-      { label: "Jours", value: timeLeft.jours },
-      { label: "Heures", value: timeLeft.heures },
-      { label: "Minutes", value: timeLeft.minutes },
-      { label: "Secondes", value: timeLeft.secondes },
+      { label: "heures", value: timeLeft.heures, bg: "bg-[#FFEDD5]" },
+      { label: "minutes", value: timeLeft.minutes, bg: "bg-[#FEE2E2]" },
+      { label: "secondes", value: timeLeft.secondes, bg: "bg-[#FEF3C7]" },
     ],
     [timeLeft],
   );
 
   return (
-    <section className="bg-[#1A1A1A] py-12">
+    <section className="bg-[#E7E5E4] py-16 md:py-20">
+      <div className="mb-8 border-y-2 border-[#44403C] py-1">
+        <div className="mx-auto flex w-fit items-center gap-2.5">
+          {Array.from({ length: 21 }).map((_, index) => (
+            <span key={`countdown-dot-${index}`} className="h-1.5 w-1.5 rounded-full bg-[#F87171]" />
+          ))}
+        </div>
+      </div>
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2
-          className="mb-8 text-center text-3xl font-black text-white md:text-4xl"
+          className="mb-8 text-center text-3xl font-extrabold text-[#424242] md:text-4xl"
           style={{ fontFamily: "Nunito, sans-serif" }}
         >
-          Rendez-vous dans
+          Le festival commence dans ...
         </h2>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-          {blocks.map((block) => (
+
+        <div className="mx-auto max-w-[304px]">
+          <div className="relative rounded-lg bg-white neo-border-thin">
+            <div className="h-6 rounded-t-lg bg-[#F87171] neo-border-thin" />
+            <div className="py-8 text-center">
+              <p
+                className="text-5xl font-black text-[#424242]"
+                style={{ fontFamily: "Nunito, sans-serif" }}
+              >
+                {String(timeLeft.jours)}
+              </p>
+              <p className="mt-3 text-2xl font-semibold text-[#424242]">jours</p>
+            </div>
+
+            <div className="absolute left-4 right-4 top-[-10px] flex justify-between">
+              {Array.from({ length: 9 }).map((_, index) => (
+                <span key={`bar-${index}`} className="h-4 w-0.5 rounded-full bg-[#44403C]" />
+              ))}
+            </div>
+
+            <div className="absolute left-4 right-4 top-1.5 flex justify-between">
+              {Array.from({ length: 9 }).map((_, index) => (
+                <span key={`dot-${index}`} className="h-1 w-1 rounded-full bg-[#44403C]" />
+              ))}
+            </div>
+          </div>
+
+          <p
+            className="my-4 text-center text-3xl font-bold text-[#424242]"
+            style={{ fontFamily: "Nunito, sans-serif" }}
+          >
+            et
+          </p>
+
+          <div className="grid grid-cols-3 gap-4">
+            {timeBlocks.map((block) => (
+              <div
+                key={block.label}
+                className={`rounded-lg p-3 text-center neo-border-thin ${block.bg}`}
+              >
+                <p
+                  className="text-3xl font-extrabold text-[#424242]"
+                  style={{ fontFamily: "Nunito, sans-serif" }}
+                >
+                  {String(block.value).padStart(2, "0")}
+                </p>
+                <p className="text-sm font-semibold text-[#424242]">{block.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mx-auto mt-10 hidden max-w-5xl md:grid md:grid-cols-3 md:gap-6">
+          {timeBlocks.map((block) => (
             <div
               key={block.label}
-              className="rounded-2xl bg-[#FFF5E6] p-4 text-center neo-border-thick neo-shadow"
+              className={`rounded-lg p-6 text-center neo-border-thin ${block.bg}`}
             >
               <p
-                className="text-4xl font-black text-[#1A1A1A] md:text-5xl"
+                className="text-5xl font-extrabold text-[#424242]"
                 style={{ fontFamily: "Nunito, sans-serif" }}
               >
                 {String(block.value).padStart(2, "0")}
               </p>
-              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-[#424242] md:text-base">
+              <p className="mt-2 text-lg font-semibold text-[#424242]">
                 {block.label}
               </p>
             </div>
