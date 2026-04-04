@@ -1,26 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream-peach: #fff5e6;
+  --mint-green: #e8f5e9;
+  --peach-light: #fff3e0;
+  --white: #ffffff;
+
+  --orange: #ff8a65;
+  --turquoise: #4db6ac;
+  --yellow: #ffd54f;
+  --pink: #f48fb1;
+  --lavender: #b39ddb;
+
+  --black: #1a1a1a;
+  --gray-dark: #424242;
+  --gray-light: #e0e0e0;
+
+  --green-accessible: #2e7d32;
+  --red-accessible: #d32f2f;
+  --green-success: #388e3c;
+
+  --font-size: 18px;
+  --background: var(--cream-peach);
+  --foreground: var(--gray-dark);
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--black);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  color: var(--black);
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+.neo-shadow {
+  box-shadow: 4px 4px 0 var(--black);
+}
+
+.neo-shadow-lg {
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+.neo-shadow-xl {
+  box-shadow: 8px 8px 0 var(--black);
+}
+
+.neo-border {
+  border: 3px solid var(--black);
+}
+
+.neo-border-thick {
+  border: 4px solid var(--black);
+}
+
+.neo-border-thin {
+  border: 2px solid var(--black);
+}
+
+.neo-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: none !important;
 }
