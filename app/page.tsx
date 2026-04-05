@@ -56,11 +56,14 @@ export default function Home() {
                 Festival Les Petits Chemins
               </h1>
 
-              <p className="mx-auto mt-7 max-w-sm text-base font-semibold text-[#424242] md:max-w-xl md:text-2xl lg:mx-0">
-                Où la culture crée de la <strong>citoyenneté</strong> !
-              </p>
-
-              <div className="mx-auto mt-4 h-1 w-28 -rotate-[5deg] rounded-full bg-[#F87171] lg:mx-0" />
+              <div className="mx-auto mt-7 max-w-sm md:max-w-xl lg:mx-0">
+                <p className="text-base font-semibold text-[#424242] md:text-2xl">
+                  Où la culture crée de la <strong>citoyenneté</strong> !
+                </p>
+                <div className="mt-2 flex justify-end">
+                  <div className="h-1 w-36 -rotate-[5deg] rounded-full bg-[#F87171]" />
+                </div>
+              </div>
 
               <div className="mt-6 inline-flex rounded-4xl bg-[#FCD34D] px-8 py-4 neo-border-thin neo-shadow">
                 <span
@@ -71,8 +74,8 @@ export default function Home() {
                 </span>
               </div>
 
-              <div className="mt-5 inline-flex items-center gap-2 text-base font-semibold text-[#424242] md:text-xl">
-                <MapPin className="h-5 w-5" />
+              <div className="mt-5 flex items-center justify-center gap-2 text-base font-bold text-[#374151] md:text-xl lg:justify-start">
+                <MapPin className="h-5 w-5 shrink-0 text-[#E53935] md:h-6 md:w-6" strokeWidth={2.5} />
                 <span>Quartier Libre - Rouen</span>
               </div>
 
@@ -93,7 +96,7 @@ export default function Home() {
             </div>
 
             <div className="relative mx-auto w-full max-w-76">
-              <div className="absolute left-1/2 -top-7 h-16 w-16 -translate-x-1/2 rounded-full bg-[#FCD34D]" />
+              <div className="absolute left-1/2 -top-10 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#FCD34D]" />
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1767274083868-d74fb3123d97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwcGVvcGxlJTIwY2VsZWJyYXRpbmclMjBmZXN0aXZhbCUyMGpveXxlbnwxfHx8fDE3Njg3NTYyMDl8MA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Personnes diverses célébrant ensemble"
@@ -101,7 +104,7 @@ export default function Home() {
                 width={304}
                 height={304}
               />
-              <div className="absolute left-1/2 -bottom-7 h-16 w-16 -translate-x-1/2 rounded-full bg-[#34D399]" />
+              <div className="absolute left-1/2 -bottom-10 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#34D399]" />
             </div>
           </div>
         </div>
@@ -187,7 +190,7 @@ export default function Home() {
 
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div className="relative mx-auto w-full max-w-76">
-              <div className="absolute left-1/2 -top-7 h-16 w-16 -translate-x-1/2 rounded-full bg-[#F9A8D4]" />
+              <div className="absolute left-1/2 -top-10 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#F9A8D4]" />
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1659640860300-d8803c5e1f1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdWx0dXJhbCUyMHZlbnVlJTIwcm91ZW58ZW58MXx8fHwxNzY4NzU2MjEwfDA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Quartier Libre - Friche culturelle"
@@ -195,7 +198,7 @@ export default function Home() {
                 width={304}
                 height={304}
               />
-              <div className="absolute left-1/2 -bottom-7 h-16 w-16 -translate-x-1/2 rounded-full bg-[#F87171]" />
+              <div className="absolute left-1/2 -bottom-10 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#F87171]" />
             </div>
 
             <div className="mx-auto w-full max-w-md text-center lg:mx-0 lg:text-left">
