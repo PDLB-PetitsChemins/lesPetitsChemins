@@ -45,7 +45,7 @@ const accessibilityItems = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FFF5E6]">
-      <section className="border-b-[6px] border-dotted border-[#FFD54F] bg-[#FFF5E6] pt-4 md:pt-10">
+      <section className="border-b-[6px] border-dotted border-[#FF8A65] bg-[#FFF5E6] pt-4 md:pt-10">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 pb-16 md:pb-20 lg:grid-cols-2">
             <div className="text-center lg:text-left">

@@ -22,7 +22,7 @@ export function Navigation() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#E7E5E4]">
+    <nav className="sticky top-0 z-50 border-b-[6px] border-dotted border-[#FFD54F] bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4 lg:py-3">
           <Link href="/" className="flex flex-col items-start" onClick={() => setIsOpen(false)}>
@@ -60,7 +60,7 @@ export function Navigation() {
 
           <button
             onClick={() => setIsOpen((prev) => !prev)}
-            className="rounded-lg bg-[#E7E5E4] p-2 neo-border-thin hover:bg-[#f0efed] xl:hidden"
+            className="rounded-lg bg-white p-2 neo-border-thin hover:bg-[#f5f5f5] xl:hidden"
             aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={isOpen}
             aria-controls="menu-mobile"
@@ -89,13 +89,6 @@ export function Navigation() {
         )}
       </div>
 
-      <div className="w-full px-2 pb-2">
-        <div className="flex w-full items-center justify-between gap-1">
-          {Array.from({ length: 36 }).map((_, index) => (
-            <span key={`header-dot-${index}`} className="h-3 w-3 rounded-full bg-[#F2C340] md:h-4 md:w-4" />
-          ))}
-        </div>
-      </div>
     </nav>
   );
 }
