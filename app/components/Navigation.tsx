@@ -8,7 +8,6 @@ import { useState } from "react";
 
 const navItems = [
   { path: "/", label: "Accueil" },
-  { path: "/projet", label: "Le Projet" },
   { path: "/programme", label: "Programme" },
   { path: "/infos-pratiques", label: "Infos Pratiques" },
   { path: "/inscription", label: "Inscription" },
