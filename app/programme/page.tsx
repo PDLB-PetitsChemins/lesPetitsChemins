@@ -188,28 +188,61 @@ function DotsRow({ colorClass }: { colorClass: string }) {
 export default function ProgrammePage() {
   return (
     <div className="min-h-screen bg-[#FFF5E6]">
-      <section className="border-b-[6px] border-dotted border-[#FCD34D] bg-[#FFF5E6] py-10 md:py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <DotsRow colorClass="bg-[#F87171]" />
+      <section className="relative overflow-hidden border-b-[6px] border-dotted border-[#FCD34D] bg-[#FFF5E6] py-10 md:py-14">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-2 h-16 md:h-20"
+          style={{
+            backgroundImage: "url('/guirlandes_programme.svg')",
+            backgroundRepeat: "repeat-x",
+            backgroundPosition: "center top",
+            backgroundSize: "clamp(170px, 28vw, 300px) auto",
+          }}
+          aria-hidden
+        />
 
-          <div className="mx-auto mt-8 max-w-4xl text-center">
-            <div className="mx-auto inline-flex rounded-[999px] bg-[#FCD34D] px-10 py-8 neo-border-thin neo-shadow">
-              <p className="text-4xl leading-tight font-black text-[#424242] md:text-5xl">
-                4 juin
-                <br />
-                2026
-              </p>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mt-14 max-w-4xl text-center md:mt-16">
+            <div className="relative mx-auto w-fit">
+              <Sparkles
+                className="absolute -left-12 top-8 h-7 w-7 -rotate-12 text-[#FCD34D] md:-left-16 md:top-10 md:h-9 md:w-9"
+                aria-hidden
+              />
+              <Sparkles
+                className="absolute -right-12 top-2 h-7 w-7 rotate-12 text-[#F9A8D4] md:-right-16 md:top-5 md:h-9 md:w-9"
+                aria-hidden
+              />
+              <Sparkles
+                className="absolute -left-10 bottom-8 h-6 w-6 text-[#FB7185] md:-left-14 md:bottom-10 md:h-8 md:w-8"
+                aria-hidden
+              />
+              <Sparkles
+                className="absolute -right-10 bottom-6 h-6 w-6 text-[#4DB6AC] md:-right-14 md:bottom-9 md:h-8 md:w-8"
+                aria-hidden
+              />
+
+              <div className="mx-auto inline-flex rounded-[999px] bg-[#FCD34D] px-10 py-8 neo-border-thin neo-shadow md:px-16 md:py-14">
+                <p className="text-4xl leading-tight font-black text-[#424242] md:text-6xl">
+                  4 juin
+                  <br />
+                  2026
+                </p>
+              </div>
             </div>
 
             <h1 className="mt-8 text-4xl font-black text-[#424242] md:text-6xl">Programme de la journée</h1>
 
             <div className="mx-auto mt-5 max-w-2xl">
               <p className="text-base font-semibold text-[#424242] md:text-xl">
-                Une journée qui <strong>change tout</strong> !
+                Une journée qui{" "}
+                <span className="relative inline-block font-bold text-[#424242]">
+                  change tout
+                  <span
+                    className="pointer-events-none absolute -bottom-0.5 left-0 h-1 w-full -rotate-[3deg] rounded-full bg-[#34D399]"
+                    aria-hidden
+                  />
+                </span>{" "}
+                !
               </p>
-              <div className="mt-2 flex justify-center">
-                <div className="h-1 w-40 -rotate-[5deg] rounded-full bg-[#34D399]" />
-              </div>
             </div>
 
             <div className="mt-6 flex flex-col items-center justify-center gap-3 text-[#424242] sm:flex-row">
