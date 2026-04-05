@@ -12,7 +12,6 @@ const navItems = [
   { path: "/programme", label: "Programme" },
   { path: "/infos-pratiques", label: "Infos Pratiques" },
   { path: "/inscription", label: "Inscription" },
-  { path: "/partenaires", label: "Partenaires" },
 ];
 
 export function Navigation() {
