@@ -59,7 +59,7 @@ export function Countdown() {
           Le festival commence dans ...
         </h2>
 
-        <div className="mx-auto max-w-[304px]">
+        <div className="mx-auto max-w-76">
           <div className="relative rounded-lg bg-white neo-border-thin">
             <div className="h-6 rounded-t-lg bg-[#F87171] neo-border-thin" />
             <div className="py-8 text-center">
@@ -72,7 +72,7 @@ export function Countdown() {
               <p className="mt-3 text-2xl font-semibold text-[#424242]">jours</p>
             </div>
 
-            <div className="absolute left-4 right-4 top-[-10px] flex justify-between">
+            <div className="absolute -top-2.5 left-4 right-4 flex justify-between">
               {Array.from({ length: 9 }).map((_, index) => (
                 <span key={`bar-${index}`} className="h-4 w-0.5 rounded-full bg-[#44403C]" />
               ))}
