@@ -81,3 +81,17 @@ html {
   transform: translate(4px, 4px);
   box-shadow: none !important;
 }
+
+.neo-hover {
+  transition:
+    transform 0.16s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.16s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.16s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform, box-shadow, filter;
+}
+
+.neo-hover:hover {
+  transform: translate(-3px, -3px) rotate(-0.4deg);
+  box-shadow: 9px 9px 0 var(--black) !important;
+  filter: saturate(1.08);
+}

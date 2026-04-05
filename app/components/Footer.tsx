@@ -106,13 +106,13 @@ export function Footer() {
           </p>
 
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
-            <div className="rounded-2xl bg-white p-3 neo-border-thin">
+            <div className="neo-hover rounded-2xl bg-white p-3 neo-border-thin">
               <a
                 href="https://www.seinemaritime.fr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Site Seine-Maritime"
-                className="block"
+                className="block rounded-xl"
               >
                 <Image
                   src="/76_seine_maritime.png"
@@ -124,13 +124,13 @@ export function Footer() {
               </a>
             </div>
 
-            <div className="rounded-2xl bg-white p-3 neo-border-thin">
+            <div className="neo-hover rounded-2xl bg-white p-3 neo-border-thin">
               <a
                 href="https://lepredelabataille.fr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Site Le Pré de la Bataille"
-                className="block"
+                className="block rounded-xl"
               >
                 <Image
                   src="/lpb_logo.png"
@@ -142,13 +142,13 @@ export function Footer() {
               </a>
             </div>
 
-            <div className="rounded-2xl bg-white p-3 neo-border-thin">
+            <div className="neo-hover rounded-2xl bg-white p-3 neo-border-thin">
               <a
                 href="https://www.lequartierlibre.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Site Le Quartier Libre"
-                className="block"
+                className="block rounded-xl"
               >
                 <Image
                   src="/quartier_libre_logo.png"
