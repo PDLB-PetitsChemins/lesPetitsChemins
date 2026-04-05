@@ -42,15 +42,7 @@ export function Countdown() {
   );
 
   return (
-    <section className="bg-[#E7E5E4] py-16 md:py-20">
-      <div className="mb-8 w-full px-2">
-        <div className="flex w-full items-center justify-between gap-1">
-          {Array.from({ length: 36 }).map((_, index) => (
-            <span key={`countdown-dot-${index}`} className="h-4 w-4 rounded-full bg-[#F2C340]" />
-          ))}
-        </div>
-      </div>
-
+    <section className="border-b-[6px] border-dotted border-[#FFD54F] bg-[#F3F3F3] py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2
           className="mb-8 text-center text-3xl font-extrabold text-[#424242] md:text-4xl"

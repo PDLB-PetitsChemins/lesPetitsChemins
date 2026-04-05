@@ -22,7 +22,7 @@ export function Navigation() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 border-b-2 border-[#44403C] bg-[#E7E5E4]">
+    <nav className="sticky top-0 z-50 bg-[#E7E5E4]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4 lg:py-3">
           <Link href="/" className="flex flex-col items-start" onClick={() => setIsOpen(false)}>
@@ -92,7 +92,7 @@ export function Navigation() {
       <div className="w-full px-2 pb-2">
         <div className="flex w-full items-center justify-between gap-1">
           {Array.from({ length: 36 }).map((_, index) => (
-            <span key={`header-dot-${index}`} className="h-4 w-4 rounded-full bg-[#F2C340]" />
+            <span key={`header-dot-${index}`} className="h-3 w-3 rounded-full bg-[#F2C340] md:h-4 md:w-4" />
           ))}
         </div>
       </div>

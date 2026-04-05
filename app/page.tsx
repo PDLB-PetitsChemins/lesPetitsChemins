@@ -7,9 +7,9 @@ import {
   Star,
   Users,
 } from "lucide-react";
+import Link from "next/link";
 import { Countdown } from "./components/Countdown";
 import { ImageWithFallback } from "./components/ImageWithFallback";
-import Link from "next/link";
 
 const festivalCards = [
   {
@@ -42,34 +42,12 @@ const accessibilityItems = [
   { icon: Cloud, label: "Espace calme", desc: "Zone de repos" },
 ];
 
-function DotRow({
-  color,
-  count = 32,
-  className = "",
-}: {
-  color: string;
-  count?: number;
-  className?: string;
-}) {
-  return (
-    <div className={`flex flex-wrap items-center justify-center gap-1.5 ${className}`}>
-      {Array.from({ length: count }).map((_, index) => (
-        <span
-          key={`${color}-${index}`}
-          className="h-1.5 w-1.5 rounded-full"
-          style={{ backgroundColor: color }}
-        />
-      ))}
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FFF5E6]">
-      <section className="bg-[#FFF5E6] pb-16 pt-4 md:pb-20 md:pt-10">
+      <section className="border-b-[6px] border-dotted border-[#FFD54F] bg-[#FFF5E6] pt-4 md:pt-10">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid items-center gap-12 pb-16 md:pb-20 lg:grid-cols-2">
             <div className="text-center lg:text-left">
               <h1
                 className="mx-auto max-w-xs text-4xl leading-tight font-black text-[#424242] md:max-w-lg md:text-6xl lg:mx-0"
@@ -131,24 +109,7 @@ export default function Home() {
 
       <Countdown />
 
-      <section className="bg-white py-16 md:py-20">
-        <div className="border-y-2 border-[#44403C] py-1">
-          <div className="mx-auto max-w-7xl">
-            <div className="mx-auto flex w-fit items-center gap-2.5">
-              {Array.from({ length: 21 }).map((_, index) => {
-                const colors = ["#F87171", "#FCD34D", "#34D399", "#F9A8D4"];
-                return (
-                  <span
-                    key={`festival-dot-${index}`}
-                    className="h-3 w-3 rounded-full"
-                    style={{ backgroundColor: colors[index % colors.length] }}
-                  />
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
+      <section className="border-b-[6px] border-dotted border-[#F87171] bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 pb-2 pt-12 sm:px-6 lg:px-8">
           <h2
             className="mb-10 text-center text-3xl font-extrabold text-[#424242] md:text-5xl"
@@ -159,10 +120,7 @@ export default function Home() {
 
           <div className="mx-auto grid max-w-md grid-cols-1 gap-5 md:max-w-5xl md:grid-cols-3">
             {festivalCards.map((item) => (
-              <div
-                key={item.title}
-                className={`rounded-lg p-8 text-center neo-border-thin ${item.bg}`}
-              >
+              <div key={item.title} className={`rounded-lg p-8 text-center neo-border-thin ${item.bg}`}>
                 <div className="mb-4 flex justify-center">
                   <div className={`rounded-3xl p-2 ${item.iconBg}`}>
                     <item.icon className="h-8 w-8 text-[#424242]" />
@@ -190,8 +148,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#6EE7B7]/60 py-16 md:py-20">
-        <DotRow color="#F87171" count={21} className="mb-8" />
+      <section className="border-b-[6px] border-dotted border-[#F87171] bg-[#6EE7B7]/60 py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="mx-auto mb-11 max-w-xl text-center text-3xl font-extrabold text-[#424242] md:text-5xl"
@@ -217,7 +174,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <DotRow color="#F87171" count={21} className="mt-10" />
       </section>
 
       <section className="bg-[#FFF5E6] py-16 md:py-20">
@@ -244,8 +200,7 @@ export default function Home() {
 
             <div className="mx-auto w-full max-w-md text-center lg:mx-0 lg:text-left">
               <p className="text-base text-[#1A1A1A] md:text-lg">
-                Un lieu unique à Rouen, ancienne friche SNCF transformée en espace
-                culturel et citoyen.
+                Un lieu unique à Rouen, ancienne friche SNCF transformée en espace culturel et citoyen.
               </p>
 
               <Link
