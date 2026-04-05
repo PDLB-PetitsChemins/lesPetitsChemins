@@ -25,7 +25,7 @@ function ButtonContent({
   return (
     <span
       className={`neo-button inline-flex h-14 items-center justify-center rounded-xl px-8 text-lg font-black transition-transform ${variantClasses[variant]} ${className}`}
-      style={{ fontFamily: "Nunito, sans-serif" }}
+      style={{ fontFamily: "Nunito Sans, sans-serif" }}
     >
       {children}
     </span>

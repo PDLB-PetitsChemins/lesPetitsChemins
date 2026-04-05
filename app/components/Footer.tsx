@@ -17,7 +17,7 @@ export function Footer() {
           <div>
             <h3
               className="mb-4 text-xl font-black text-[#FFD54F]"
-              style={{ fontFamily: "Nunito, sans-serif" }}
+              style={{ fontFamily: "Nunito Sans, sans-serif" }}
             >
               Contact
             </h3>
@@ -31,7 +31,7 @@ export function Footer() {
           <div>
             <h3
               className="mb-4 text-xl font-black text-[#FFD54F]"
-              style={{ fontFamily: "Nunito, sans-serif" }}
+              style={{ fontFamily: "Nunito Sans, sans-serif" }}
             >
               Liens utiles
             </h3>
@@ -57,7 +57,7 @@ export function Footer() {
           <div>
             <h3
               className="mb-4 text-xl font-black text-[#FFD54F]"
-              style={{ fontFamily: "Nunito, sans-serif" }}
+              style={{ fontFamily: "Nunito Sans, sans-serif" }}
             >
               Suivez-nous
             </h3>
@@ -96,7 +96,7 @@ export function Footer() {
 
           <p
             className="mt-8 text-center text-xl font-bold text-[#FCD34D]"
-            style={{ fontFamily: "Nunito, sans-serif" }}
+            style={{ fontFamily: "Nunito Sans, sans-serif" }}
           >
             Avec le soutien de
           </p>

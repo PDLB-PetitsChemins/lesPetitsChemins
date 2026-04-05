@@ -23,7 +23,7 @@ export function NeoBadge({
   return (
     <span
       className={`inline-flex items-center rounded-xl px-5 py-2 font-black text-[#1A1A1A] neo-border-thick neo-shadow ${colorClasses[color]} ${className}`}
-      style={{ fontFamily: "Nunito, sans-serif" }}
+      style={{ fontFamily: "Nunito Sans, sans-serif" }}
     >
       {children}
     </span>

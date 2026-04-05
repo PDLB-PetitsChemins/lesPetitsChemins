@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -21,25 +22,35 @@ export function Navigation() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-white neo-border-thin">
+    <nav className="sticky top-0 z-50 border-b-2 border-[#44403C] bg-[#E7E5E4]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-            <div className="text-2xl font-black" style={{ fontFamily: "Nunito, sans-serif" }}>
-              <span className="text-[#FF8A65]">Les Petits</span>{" "}
-              <span className="text-[#4DB6AC]">Chemins</span>
-            </div>
+        <div className="flex items-center justify-between py-4 lg:py-3">
+          <Link href="/" className="flex flex-col items-start" onClick={() => setIsOpen(false)}>
+            <Image
+              src="/Guirlandes.svg"
+              alt="Logo Les petits chemins"
+              width={220}
+              height={90}
+              className="h-auto w-52 md:w-56 lg:w-52"
+              priority
+            />
+            <span
+              className="mt-1 text-lg font-semibold text-[#44403C] md:text-xl lg:text-2xl"
+              style={{ fontFamily: "Nunito Sans, sans-serif" }}
+            >
+              Festival Les petits chemins
+            </span>
           </Link>
 
-          <div className="hidden items-center space-x-1 md:flex">
+          <div className="hidden items-center space-x-1 xl:flex">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
-                className={`rounded-lg px-4 py-2 font-bold transition-all ${
+                className={`rounded-lg px-4 py-2 text-base font-bold transition-all ${
                   isActive(item.path)
                     ? "bg-[#FFD54F] text-[#1A1A1A] neo-border-thin"
-                    : "text-[#424242] hover:bg-[#FFF5E6]"
+                    : "text-[#374151] hover:bg-[#FFF5E6]"
                 }`}
               >
                 {item.label}
@@ -49,17 +60,17 @@ export function Navigation() {
 
           <button
             onClick={() => setIsOpen((prev) => !prev)}
-            className="rounded-lg bg-white p-2 neo-border-thin hover:bg-gray-50 md:hidden"
+            className="rounded-lg bg-[#E7E5E4] p-2 neo-border-thin hover:bg-[#f0efed] xl:hidden"
             aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={isOpen}
             aria-controls="menu-mobile"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} className="text-[#44403C]" /> : <Menu size={24} className="text-[#44403C]" />}
           </button>
         </div>
 
         {isOpen && (
-          <div id="menu-mobile" className="space-y-2 border-t-2 border-[#1A1A1A] py-4 md:hidden">
+          <div id="menu-mobile" className="space-y-2 border-t-2 border-[#44403C] py-4 xl:hidden">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -68,7 +79,7 @@ export function Navigation() {
                 className={`block rounded-lg px-4 py-3 font-bold transition-all ${
                   isActive(item.path)
                     ? "bg-[#FFD54F] text-[#1A1A1A] neo-border-thin"
-                    : "text-[#424242] hover:bg-[#FFF5E6]"
+                    : "text-[#374151] hover:bg-[#FFF5E6]"
                 }`}
               >
                 {item.label}
@@ -76,6 +87,14 @@ export function Navigation() {
             ))}
           </div>
         )}
+      </div>
+
+      <div className="w-full px-2 pb-2">
+        <div className="flex w-full items-center justify-between gap-1">
+          {Array.from({ length: 36 }).map((_, index) => (
+            <span key={`header-dot-${index}`} className="h-4 w-4 rounded-full bg-[#F2C340]" />
+          ))}
+        </div>
       </div>
     </nav>
   );

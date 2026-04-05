@@ -68,13 +68,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#FFF5E6]">
       <section className="bg-[#FFF5E6] pb-16 pt-4 md:pb-20 md:pt-10">
-        <DotRow color="#FCD34D" className="mb-7" />
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="text-center lg:text-left">
               <h1
                 className="mx-auto max-w-xs text-4xl leading-tight font-black text-[#424242] md:max-w-lg md:text-6xl lg:mx-0"
-                style={{ fontFamily: "Nunito, sans-serif" }}
+                style={{ fontFamily: "Nunito Sans, sans-serif" }}
               >
                 Festival Les Petits Chemins
               </h1>
@@ -88,7 +87,7 @@ export default function Home() {
               <div className="mt-6 inline-flex rounded-4xl bg-[#FCD34D] px-8 py-4 neo-border-thin neo-shadow">
                 <span
                   className="text-3xl font-black text-[#424242]"
-                  style={{ fontFamily: "Nunito, sans-serif" }}
+                  style={{ fontFamily: "Nunito Sans, sans-serif" }}
                 >
                   4 juin 2026
                 </span>
@@ -153,7 +152,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 pb-2 pt-12 sm:px-6 lg:px-8">
           <h2
             className="mb-10 text-center text-3xl font-extrabold text-[#424242] md:text-5xl"
-            style={{ fontFamily: "Nunito, sans-serif" }}
+            style={{ fontFamily: "Nunito Sans, sans-serif" }}
           >
             C&apos;est quoi ce festival ?
           </h2>
@@ -171,7 +170,7 @@ export default function Home() {
                 </div>
                 <h3
                   className="text-2xl font-bold text-[#424242]"
-                  style={{ fontFamily: "Nunito, sans-serif" }}
+                  style={{ fontFamily: "Nunito Sans, sans-serif" }}
                 >
                   {item.title}
                 </h3>
@@ -196,7 +195,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="mx-auto mb-11 max-w-xl text-center text-3xl font-extrabold text-[#424242] md:text-5xl"
-            style={{ fontFamily: "Nunito, sans-serif" }}
+            style={{ fontFamily: "Nunito Sans, sans-serif" }}
           >
             Un festival accessible à tous
           </h2>
@@ -209,7 +208,7 @@ export default function Home() {
                 </div>
                 <h3
                   className="text-xl font-bold text-[#424242]"
-                  style={{ fontFamily: "Nunito, sans-serif" }}
+                  style={{ fontFamily: "Nunito Sans, sans-serif" }}
                 >
                   {item.label}
                 </h3>
@@ -225,7 +224,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="mx-auto mb-12 max-w-xl text-center text-3xl font-extrabold text-[#424242] md:text-5xl"
-            style={{ fontFamily: "Nunito, sans-serif" }}
+            style={{ fontFamily: "Nunito Sans, sans-serif" }}
           >
             Au coeur de la friche culturelle Quartier Libre
           </h2>

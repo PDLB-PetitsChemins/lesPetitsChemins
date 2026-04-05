@@ -43,10 +43,10 @@ export function Countdown() {
 
   return (
     <section className="bg-[#E7E5E4] py-16 md:py-20">
-      <div className="mb-8 border-y-2 border-[#44403C] py-1">
-        <div className="mx-auto flex w-fit items-center gap-2.5">
-          {Array.from({ length: 21 }).map((_, index) => (
-            <span key={`countdown-dot-${index}`} className="h-1.5 w-1.5 rounded-full bg-[#F87171]" />
+      <div className="mb-8 w-full px-2">
+        <div className="flex w-full items-center justify-between gap-1">
+          {Array.from({ length: 36 }).map((_, index) => (
+            <span key={`countdown-dot-${index}`} className="h-4 w-4 rounded-full bg-[#F2C340]" />
           ))}
         </div>
       </div>
@@ -54,7 +54,7 @@ export function Countdown() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2
           className="mb-8 text-center text-3xl font-extrabold text-[#424242] md:text-4xl"
-          style={{ fontFamily: "Nunito, sans-serif" }}
+          style={{ fontFamily: "Nunito Sans, sans-serif" }}
         >
           Le festival commence dans ...
         </h2>
@@ -65,7 +65,7 @@ export function Countdown() {
             <div className="py-8 text-center">
               <p
                 className="text-5xl font-black text-[#424242]"
-                style={{ fontFamily: "Nunito, sans-serif" }}
+                style={{ fontFamily: "Nunito Sans, sans-serif" }}
               >
                 {String(timeLeft.jours)}
               </p>
@@ -87,7 +87,7 @@ export function Countdown() {
 
           <p
             className="my-4 text-center text-3xl font-bold text-[#424242]"
-            style={{ fontFamily: "Nunito, sans-serif" }}
+            style={{ fontFamily: "Nunito Sans, sans-serif" }}
           >
             et
           </p>
@@ -100,7 +100,7 @@ export function Countdown() {
               >
                 <p
                   className="text-3xl font-extrabold text-[#424242]"
-                  style={{ fontFamily: "Nunito, sans-serif" }}
+                  style={{ fontFamily: "Nunito Sans, sans-serif" }}
                 >
                   {String(block.value).padStart(2, "0")}
                 </p>
@@ -118,7 +118,7 @@ export function Countdown() {
             >
               <p
                 className="text-5xl font-extrabold text-[#424242]"
-                style={{ fontFamily: "Nunito, sans-serif" }}
+                style={{ fontFamily: "Nunito Sans, sans-serif" }}
               >
                 {String(block.value).padStart(2, "0")}
               </p>
