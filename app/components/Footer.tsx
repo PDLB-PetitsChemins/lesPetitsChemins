@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Camera, Globe, Mail } from "lucide-react";
 
@@ -17,7 +18,7 @@ export function Footer() {
           <div>
             <h3
               className="mb-4 text-xl font-black text-[#FFD54F]"
-              style={{ fontFamily: "Nunito Sans, sans-serif" }}
+              style={{ fontFamily: "Nunito Sans, sans-serif", color: "#FFD54F" }}
             >
               Contact
             </h3>
@@ -31,7 +32,7 @@ export function Footer() {
           <div>
             <h3
               className="mb-4 text-xl font-black text-[#FFD54F]"
-              style={{ fontFamily: "Nunito Sans, sans-serif" }}
+              style={{ fontFamily: "Nunito Sans, sans-serif", color: "#FFD54F" }}
             >
               Liens utiles
             </h3>
@@ -57,7 +58,7 @@ export function Footer() {
           <div>
             <h3
               className="mb-4 text-xl font-black text-[#FFD54F]"
-              style={{ fontFamily: "Nunito Sans, sans-serif" }}
+              style={{ fontFamily: "Nunito Sans, sans-serif", color: "#FFD54F" }}
             >
               Suivez-nous
             </h3>
@@ -101,26 +102,35 @@ export function Footer() {
             Avec le soutien de
           </p>
 
-          <div className="mt-6 flex flex-wrap items-start justify-center gap-6">
-            <div className="w-24 text-center">
-              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-[48px] bg-white p-2">
-                <span className="text-2xl font-black text-[#1A1A1A]">76</span>
-              </div>
-              <p className="mt-2 text-base text-white">Département 76</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
+            <div className="rounded-2xl bg-white p-3 neo-border-thin">
+              <Image
+                src="/76_seine_maritime.png"
+                alt="Logo Seine-Maritime Le Département"
+                width={320}
+                height={300}
+                className="mx-auto h-24 w-full object-contain"
+              />
             </div>
 
-            <div className="w-24 text-center">
-              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-[48px] bg-white p-2">
-                <span className="text-base font-black text-[#1A1A1A]">LPB</span>
-              </div>
-              <p className="mt-2 text-base text-white">Le Pré de la Bataille</p>
+            <div className="rounded-2xl bg-white p-3 neo-border-thin">
+              <Image
+                src="/lpb_logo.png"
+                alt="Logo Le Pré de la Bataille"
+                width={320}
+                height={300}
+                className="mx-auto h-24 w-full object-contain"
+              />
             </div>
 
-            <div className="w-24 text-center">
-              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-[48px] bg-white p-2">
-                <span className="text-base font-black text-[#1A1A1A]">QL</span>
-              </div>
-              <p className="mt-2 text-base text-white">Quartier Libre</p>
+            <div className="rounded-2xl bg-white p-3 neo-border-thin">
+              <Image
+                src="/quartier_libre_logo.png"
+                alt="Logo Le Quartier Libre de Rouen"
+                width={320}
+                height={300}
+                className="mx-auto h-24 w-full object-contain"
+              />
             </div>
           </div>
         </div>

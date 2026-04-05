@@ -98,7 +98,7 @@ export default function Home() {
             <div className="relative mx-auto w-full max-w-76">
               <div className="absolute left-1/2 -top-10 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#FCD34D]" />
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1767274083868-d74fb3123d97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwcGVvcGxlJTIwY2VsZWJyYXRpbmclMjBmZXN0aXZhbCUyMGpveXxlbnwxfHx8fDE3Njg3NTYyMDl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="/hero_img.png"
                 alt="Personnes diverses célébrant ensemble"
                 className="relative z-10 aspect-square w-full rounded-lg object-cover neo-border-thin"
                 width={304}
@@ -192,7 +192,7 @@ export default function Home() {
             <div className="relative mx-auto w-full max-w-76">
               <div className="absolute left-1/2 -top-10 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#F9A8D4]" />
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1659640860300-d8803c5e1f1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdWx0dXJhbCUyMHZlbnVlJTIwcm91ZW58ZW58MXx8fHwxNzY4NzU2MjEwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="/quartier_libre_entree.png"
                 alt="Quartier Libre - Friche culturelle"
                 className="relative z-10 aspect-square w-full rounded-lg object-cover neo-border-thin"
                 width={304}
