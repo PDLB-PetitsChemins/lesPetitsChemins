@@ -237,7 +237,7 @@ export default function ProgrammePage() {
                 <span className="relative inline-block font-bold text-[#424242]">
                   change tout
                   <span
-                    className="pointer-events-none absolute -bottom-0.5 left-0 h-1 w-full -rotate-[3deg] rounded-full bg-[#34D399]"
+                    className="pointer-events-none absolute -bottom-0.5 left-0 h-1 w-full -rotate-3 rounded-full bg-[#34D399]"
                     aria-hidden
                   />
                 </span>{" "}
@@ -297,10 +297,19 @@ export default function ProgrammePage() {
         </div>
       </section>
 
-      <section className="border-b-[6px] border-dotted border-[#F87171] bg-[#FFF5E6] py-14 md:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <DotsRow colorClass="bg-[#F87171]" />
+      <section className="relative border-b-[6px] border-dotted border-[#F87171] bg-[#FFF5E6] pb-14 pt-24 md:pb-20 md:pt-28">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-2 h-16 md:h-20"
+          style={{
+            backgroundImage: "url('/girlandes_triangle.svg')",
+            backgroundRepeat: "repeat-x",
+            backgroundPosition: "center top",
+            backgroundSize: "clamp(180px, 32vw, 320px) auto",
+          }}
+          aria-hidden
+        />
 
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2 className="mx-auto mt-7 max-w-3xl text-center text-3xl font-extrabold text-[#424242] md:text-5xl">
             Après-midi festif et participatif, ouvert à tous !
           </h2>
