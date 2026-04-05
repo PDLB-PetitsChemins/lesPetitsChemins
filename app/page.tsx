@@ -87,10 +87,10 @@ export default function Home() {
                   Je m&apos;inscris
                 </Link>
                 <Link
-                  href="/projet"
+                  href="/programme"
                   className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-white px-6 text-base font-semibold text-[#424242] neo-border-thin neo-shadow"
                 >
-                  Je découvre le projet
+                  Je découvre le programme
                 </Link>
               </div>
             </div>
@@ -153,10 +153,10 @@ export default function Home() {
 
           <div className="mt-9 text-center">
             <Link
-              href="/projet"
+              href="/programme"
               className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-white px-8 text-base font-normal text-[#424242] neo-border-thin neo-shadow"
             >
-              En savoir plus sur le projet
+              Voir le programme complet
             </Link>
           </div>
         </div>
