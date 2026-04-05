@@ -147,25 +147,11 @@ const faqItems: FaqItem[] = [
   },
 ];
 
-function DotsRow({ colorClass }: { colorClass: string }) {
-  return (
-    <div className="mx-auto flex w-fit items-center justify-center gap-1.5">
-      {Array.from({ length: 21 }).map((_, index) => (
-        <span
-          key={`infos-dot-${colorClass}-${index}`}
-          className={`h-1.5 w-1.5 rounded-full ${colorClass}`}
-        />
-      ))}
-    </div>
-  );
-}
-
 export default function InfosPratiquesPage() {
   return (
     <div className="min-h-screen bg-[#FFF5E6]">
-      <section className="border-b-[6px] border-dotted border-[#FCD34D] bg-[#FFF5E6] py-12 md:py-16">
+      <section className="bg-[#FFF5E6] py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <DotsRow colorClass="bg-[#FCD34D]" />
 
           <div className="mx-auto mt-8 max-w-4xl text-center">
             <h1 className="text-4xl font-black text-[#424242] md:text-6xl">
@@ -185,52 +171,50 @@ export default function InfosPratiquesPage() {
         </div>
       </section>
 
-      <section className="border-b-[6px] border-dotted border-[#F87171] bg-[#FFF5E6] py-14 md:py-20">
+      <section className="border-b-[6px] border-dotted border-[#F87171] bg-[#FFF5E6] pb-14 pt-8 md:pb-20 md:pt-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-start gap-10 lg:grid-cols-2">
-            <div>
-              <div className="relative mx-auto w-full max-w-80">
-                <div className="absolute left-1/2 -top-8 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#FCD34D]" />
-                <ImageWithFallback
-                  src="/quartier_libre_entree.png"
-                  alt="Quartier Libre - Atelier Lucien"
-                  className="relative z-10 aspect-square w-full rounded-lg object-cover neo-border-thin"
-                  width={312}
-                  height={304}
-                />
-                <div className="absolute left-1/2 -bottom-8 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#34D399]" />
+          <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
+            <div className="relative mx-auto w-full max-w-xl self-start lg:mx-0 lg:max-w-none">
+              <div className="absolute left-1/2 -top-8 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#FCD34D]" />
+              <ImageWithFallback
+                src="/quartier_libre_entree.png"
+                alt="Quartier Libre - Atelier Lucien"
+                className="relative z-10 aspect-4/3 w-full rounded-lg object-cover neo-border-thin"
+                width={312}
+                height={304}
+              />
+              <div className="absolute left-1/2 -bottom-8 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#34D399]" />
+            </div>
+
+            <div className="rounded-2xl bg-white p-6 neo-border-thin">
+              <div className="flex items-center gap-3">
+                <span className="rounded-2xl bg-[#F87171] p-2.5">
+                  <MapPin className="h-6 w-6 text-[#424242]" />
+                </span>
+                <h2 className="text-2xl font-extrabold text-[#424242]">
+                  Ou sommes-nous ?
+                </h2>
               </div>
 
-              <div className="mt-14 rounded-2xl bg-white p-6 neo-border-thin">
-                <div className="flex items-center gap-3">
-                  <span className="rounded-2xl bg-[#F87171] p-2.5">
-                    <MapPin className="h-6 w-6 text-[#424242]" />
-                  </span>
-                  <h2 className="text-2xl font-extrabold text-[#424242]">
-                    Ou sommes-nous ?
-                  </h2>
-                </div>
+              <p className="mt-4 text-lg font-bold text-[#424242]">
+                Quartier Libre - Atelier Lucien
+              </p>
+              <p className="mt-2 text-base text-[#424242]">
+                Friche culturelle SNCF Saint-Sever
+                <br />
+                1 rue Malouet
+                <br />
+                76100 Rouen
+              </p>
 
-                <p className="mt-4 text-lg font-bold text-[#424242]">
-                  Quartier Libre - Atelier Lucien
-                </p>
-                <p className="mt-2 text-base text-[#424242]">
-                  Friche culturelle SNCF Saint-Sever
-                  <br />
-                  1 rue Malouet
-                  <br />
-                  76100 Rouen
-                </p>
-
-                <div className="mt-6 overflow-hidden rounded-lg neo-border-thin">
-                  <iframe
-                    title="Carte - Quartier Libre Atelier Lucien"
-                    src="https://www.google.com/maps?q=Quartier+Libre+Atelier+Lucien+1+rue+Malouet+76100+Rouen&output=embed"
-                    className="h-64 w-full"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
+              <div className="mt-6 overflow-hidden rounded-lg neo-border-thin">
+                <iframe
+                  title="Carte - Quartier Libre Atelier Lucien"
+                  src="https://www.google.com/maps?q=Quartier+Libre+Atelier+Lucien+1+rue+Malouet+76100+Rouen&output=embed"
+                  className="h-80 w-full md:h-96 lg:h-112"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           </div>
@@ -239,7 +223,6 @@ export default function InfosPratiquesPage() {
 
       <section className="border-b-[6px] border-dotted border-[#F87171] bg-white py-14 md:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <DotsRow colorClass="bg-[#F87171]" />
           <h2 className="mt-7 text-center text-3xl font-extrabold text-[#424242] md:text-5xl">
             Comment venir ?
           </h2>
@@ -274,7 +257,6 @@ export default function InfosPratiquesPage() {
 
       <section className="border-b-[6px] border-dotted border-[#F87171] bg-[#A7F3D0] py-14 md:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <DotsRow colorClass="bg-[#F87171]" />
           <h2 className="mx-auto mt-7 max-w-3xl text-center text-3xl font-extrabold text-[#424242] md:text-5xl">
             Le festival est 100 % accessible
           </h2>
@@ -309,7 +291,6 @@ export default function InfosPratiquesPage() {
 
       <section className="border-b-[6px] border-dotted border-[#F87171] bg-[#F9A8D4]/70 py-14 md:py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <DotsRow colorClass="bg-[#F87171]" />
           <h2 className="mx-auto mt-7 max-w-3xl text-center text-3xl font-extrabold text-[#424242] md:text-5xl">
             Une question, un besoin specifique ?
           </h2>
@@ -341,7 +322,6 @@ export default function InfosPratiquesPage() {
 
       <section className="bg-[#FFF5E6] py-14 md:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <DotsRow colorClass="bg-[#F87171]" />
           <h2 className="mt-7 text-center text-3xl font-extrabold text-[#424242] md:text-5xl">
             Questions frequentes
           </h2>
