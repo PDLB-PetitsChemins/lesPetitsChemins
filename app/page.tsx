@@ -112,8 +112,19 @@ export default function Home() {
 
       <Countdown />
 
-      <section className="border-b-[6px] border-dotted border-[#F87171] bg-white py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4 pb-2 pt-12 sm:px-6 lg:px-8">
+      <section className="relative border-b-[6px] border-dotted border-[#F87171] bg-white pb-16 pt-28 md:pb-20 md:pt-32">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-2 h-16 md:h-20"
+          style={{
+            backgroundImage: "url('/girlandes_round.svg')",
+            backgroundRepeat: "repeat-x",
+            backgroundPosition: "center top",
+            backgroundSize: "clamp(180px, 32vw, 320px) auto",
+          }}
+          aria-hidden
+        />
+
+        <div className="mx-auto max-w-7xl px-4 pb-2 pt-0 sm:px-6 lg:px-8">
           <h2
             className="mb-10 text-center text-3xl font-extrabold text-[#424242] md:text-5xl"
             style={{ fontFamily: "Nunito Sans, sans-serif" }}

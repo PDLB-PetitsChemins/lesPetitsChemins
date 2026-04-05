@@ -42,7 +42,18 @@ export function Countdown() {
   );
 
   return (
-    <section className="border-b-[6px] border-dotted border-[#FFD54F] bg-[#F3F3F3] py-16 md:py-20">
+    <section className="relative border-b-[6px] border-dotted border-[#FFD54F] bg-[#F3F3F3] py-16 pt-28 md:py-20 md:pt-32">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-2 h-16 md:h-20"
+        style={{
+          backgroundImage: "url('/girlandes_triangle.svg')",
+          backgroundRepeat: "repeat-x",
+          backgroundPosition: "center top",
+          backgroundSize: "clamp(180px, 32vw, 320px) auto",
+        }}
+        aria-hidden
+      />
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2
           className="mb-8 text-center text-3xl font-extrabold text-[#424242] md:text-4xl"
