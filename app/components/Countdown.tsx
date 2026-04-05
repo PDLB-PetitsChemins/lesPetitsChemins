@@ -11,6 +11,13 @@ type TimeLeft = {
   secondes: number;
 };
 
+const INITIAL_TIME_LEFT: TimeLeft = {
+  jours: 0,
+  heures: 0,
+  minutes: 0,
+  secondes: 0,
+};
+
 function computeTimeLeft(): TimeLeft {
   const diff = Math.max(0, TARGET_DATE - Date.now());
   const jours = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -22,14 +29,21 @@ function computeTimeLeft(): TimeLeft {
 }
 
 export function Countdown() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(computeTimeLeft);
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(INITIAL_TIME_LEFT);
 
   useEffect(() => {
+    const firstTick = window.setTimeout(() => {
+      setTimeLeft(computeTimeLeft());
+    }, 0);
+
     const timer = window.setInterval(() => {
       setTimeLeft(computeTimeLeft());
     }, 1000);
 
-    return () => window.clearInterval(timer);
+    return () => {
+      window.clearTimeout(firstTick);
+      window.clearInterval(timer);
+    };
   }, []);
 
   const timeBlocks = useMemo(
