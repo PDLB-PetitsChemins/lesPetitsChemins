@@ -24,7 +24,7 @@ function ButtonContent({
 }: Pick<NeoButtonProps, "children" | "variant" | "className">) {
   return (
     <span
-      className={`neo-button inline-flex h-14 items-center justify-center rounded-xl px-8 text-lg font-black transition-transform ${variantClasses[variant]} ${className}`}
+      className={`neo-button neo-hover inline-flex h-14 items-center justify-center rounded-xl px-8 text-lg font-black transition-transform ${variantClasses[variant]} ${className}`}
       style={{ fontFamily: "Nunito Sans, sans-serif" }}
     >
       {children}

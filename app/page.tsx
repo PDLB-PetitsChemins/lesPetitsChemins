@@ -82,13 +82,13 @@ export default function Home() {
               <div className="mx-auto mt-8 flex w-full max-w-sm flex-col gap-4 lg:mx-0">
                 <Link
                   href="/inscription"
-                  className="inline-flex h-14 items-center justify-center rounded-lg bg-[#F87171] px-6 text-base font-extrabold text-[#424242] neo-border-thin neo-shadow"
+                  className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-[#F87171] px-6 text-base font-extrabold text-[#424242] neo-border-thin neo-shadow"
                 >
                   Je m&apos;inscris
                 </Link>
                 <Link
                   href="/projet"
-                  className="inline-flex h-14 items-center justify-center rounded-lg bg-white px-6 text-base font-semibold text-[#424242] neo-border-thin neo-shadow"
+                  className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-white px-6 text-base font-semibold text-[#424242] neo-border-thin neo-shadow"
                 >
                   Je découvre le projet
                 </Link>
@@ -154,7 +154,7 @@ export default function Home() {
           <div className="mt-9 text-center">
             <Link
               href="/projet"
-              className="inline-flex h-14 items-center justify-center rounded-lg bg-white px-8 text-base font-normal text-[#424242] neo-border-thin neo-shadow"
+              className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-white px-8 text-base font-normal text-[#424242] neo-border-thin neo-shadow"
             >
               En savoir plus sur le projet
             </Link>
@@ -219,7 +219,7 @@ export default function Home() {
 
               <Link
                 href="/infos-pratiques"
-                className="mx-auto mt-8 inline-flex h-14 items-center justify-center rounded-lg bg-[#FCD34D] px-8 text-base font-bold text-[#424242] neo-border-thin neo-shadow lg:mx-0"
+                className="neo-hover mx-auto mt-8 inline-flex h-14 items-center justify-center rounded-lg bg-[#FCD34D] px-8 text-base font-bold text-[#424242] neo-border-thin neo-shadow lg:mx-0"
               >
                 Voir les infos pratiques
               </Link>

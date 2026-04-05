@@ -6,9 +6,12 @@ export function Footer() {
   return (
     <footer className="bg-[#404040] py-10 text-white md:py-14">
       <div className="mb-8 border-b-2 border-[#404040]">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-center gap-1.5 px-4 pb-2 sm:px-6 lg:px-8">
-          {Array.from({ length: 32 }).map((_, index) => (
-            <span key={`footer-top-dot-${index}`} className="h-1.5 w-1.5 rounded-full bg-[#FCD34D]" />
+        <div className="mx-auto flex w-fit items-center justify-center gap-1.5 px-4 pb-2 sm:px-6 lg:px-8">
+          {Array.from({ length: 21 }).map((_, index) => (
+            <span
+              key={`footer-top-dot-${index}`}
+              className="h-1.5 w-1.5 rounded-full bg-[#FCD34D]"
+            />
           ))}
         </div>
       </div>
@@ -103,34 +106,58 @@ export function Footer() {
           </p>
 
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
-            <div className="rounded-2xl bg-white p-3 neo-border-thin">
-              <Image
-                src="/76_seine_maritime.png"
-                alt="Logo Seine-Maritime Le Département"
-                width={320}
-                height={300}
-                className="mx-auto h-24 w-full object-contain"
-              />
+            <div className="neo-hover rounded-2xl bg-white p-3 neo-border-thin">
+              <a
+                href="https://www.seinemaritime.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Site Seine-Maritime"
+                className="block rounded-xl"
+              >
+                <Image
+                  src="/76_seine_maritime.png"
+                  alt="Logo Seine-Maritime Le Département"
+                  width={320}
+                  height={300}
+                  className="mx-auto h-24 w-full object-contain"
+                />
+              </a>
             </div>
 
-            <div className="rounded-2xl bg-white p-3 neo-border-thin">
-              <Image
-                src="/lpb_logo.png"
-                alt="Logo Le Pré de la Bataille"
-                width={320}
-                height={300}
-                className="mx-auto h-24 w-full object-contain"
-              />
+            <div className="neo-hover rounded-2xl bg-white p-3 neo-border-thin">
+              <a
+                href="https://lepredelabataille.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Site Le Pré de la Bataille"
+                className="block rounded-xl"
+              >
+                <Image
+                  src="/lpb_logo.png"
+                  alt="Logo Le Pré de la Bataille"
+                  width={320}
+                  height={300}
+                  className="mx-auto h-24 w-full object-contain"
+                />
+              </a>
             </div>
 
-            <div className="rounded-2xl bg-white p-3 neo-border-thin">
-              <Image
-                src="/quartier_libre_logo.png"
-                alt="Logo Le Quartier Libre de Rouen"
-                width={320}
-                height={300}
-                className="mx-auto h-24 w-full object-contain"
-              />
+            <div className="neo-hover rounded-2xl bg-white p-3 neo-border-thin">
+              <a
+                href="https://www.lequartierlibre.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Site Le Quartier Libre"
+                className="block rounded-xl"
+              >
+                <Image
+                  src="/quartier_libre_logo.png"
+                  alt="Logo Le Quartier Libre de Rouen"
+                  width={320}
+                  height={300}
+                  className="mx-auto h-24 w-full object-contain"
+                />
+              </a>
             </div>
           </div>
         </div>
