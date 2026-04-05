@@ -25,17 +25,17 @@ export function Navigation() {
     <nav className="sticky top-0 z-50 border-b-[6px] border-dotted border-[#FFD54F] bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4 lg:py-3">
-          <Link href="/" className="flex flex-col items-start" onClick={() => setIsOpen(false)}>
+          <Link href="/" className="mr-3 flex items-center gap-3 md:mr-4 md:gap-4" onClick={() => setIsOpen(false)}>
             <Image
               src="/Guirlandes.svg"
               alt="Logo Les petits chemins"
               width={220}
               height={90}
-              className="h-auto w-52 md:w-56 lg:w-52"
+              className="h-auto w-40 md:w-44 lg:w-48"
               priority
             />
             <span
-              className="mt-1 text-lg font-semibold text-[#44403C] md:text-xl lg:text-2xl"
+              className="hidden text-base font-semibold text-[#44403C] xl:block"
               style={{ fontFamily: "Nunito Sans, sans-serif" }}
             >
               Festival Les petits chemins
