@@ -56,7 +56,7 @@ export default function Home() {
                 Festival Les Petits Chemins
               </h1>
 
-              <div className="mx-auto mt-7 max-w-sm md:max-w-xl lg:mx-0">
+              <div className="mx-auto mt-7 max-w-sm md:max-w-xl lg:mx-0 lg:w-fit lg:max-w-none">
                 <p className="text-base font-semibold text-[#424242] md:text-2xl">
                   Où la culture crée de la <strong>citoyenneté</strong> !
                 </p>
