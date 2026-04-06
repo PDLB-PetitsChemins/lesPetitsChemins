@@ -183,10 +183,10 @@ export default function ProgrammePage() {
         <div
           className="pointer-events-none absolute inset-x-0 top-2 h-16 md:h-20"
           style={{
-            backgroundImage: "url('/guirlandes_programme.svg')",
+            backgroundImage: "url('/girlandes_triangle.svg')",
             backgroundRepeat: "repeat-x",
             backgroundPosition: "center top",
-            backgroundSize: "clamp(170px, 28vw, 300px) auto",
+            backgroundSize: "clamp(180px, 32vw, 320px) auto",
           }}
           aria-hidden
         />
