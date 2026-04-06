@@ -1,21 +1,24 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Festival Les Petits Chemins",
+  "short_name": "Les Petits Chemins",
+  "description": "Festival citoyen et culturel a Rouen organise par l'Association Le Pre de la Bataille.",
+  "start_url": "/",
+  "lang": "fr",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
       "src": "/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#FFF5E6",
+  "background_color": "#FFF5E6",
   "display": "standalone"
 }

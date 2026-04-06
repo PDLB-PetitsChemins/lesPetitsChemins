@@ -6,9 +6,85 @@ import {
   Star,
   Users,
 } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Countdown } from "./components/Countdown";
 import { ImageWithFallback } from "./components/ImageWithFallback";
+import { defaultOgImage, siteUrl } from "./lib/seo";
+
+export const metadata: Metadata = {
+  description:
+    "Festival citoyen et culturel au Quartier Libre a Rouen, le 4 juin 2026. Matinee professionnelle et apres-midi ouvert a tous.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Festival Les Petits Chemins",
+    description:
+      "Festival citoyen et culturel au Quartier Libre a Rouen, le 4 juin 2026.",
+    url: siteUrl,
+    images: [
+      {
+        url: defaultOgImage,
+        alt: "Affiche du Festival Les Petits Chemins",
+      },
+    ],
+  },
+  twitter: {
+    title: "Festival Les Petits Chemins",
+    description:
+      "Festival citoyen et culturel au Quartier Libre a Rouen, le 4 juin 2026.",
+    images: [defaultOgImage],
+  },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}#organization`,
+      name: "Association Le Pre de la Bataille",
+      url: siteUrl,
+      email: "dpo@lepredelabataille.fr",
+      sameAs: [
+        "https://www.linkedin.com/company/association-le-pre-de-la-bataille/",
+      ],
+    },
+    {
+      "@type": "Event",
+      "@id": `${siteUrl}#festival-les-petits-chemins-2026`,
+      name: "Festival Les Petits Chemins",
+      description:
+        "Festival citoyen et culturel a Rouen : matinee professionnelle et apres-midi festif ouvert a tous.",
+      startDate: "2026-06-04T09:00:00+02:00",
+      endDate: "2026-06-04T17:30:00+02:00",
+      eventStatus: "https://schema.org/EventScheduled",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      inLanguage: "fr-FR",
+      image: [`${siteUrl}${defaultOgImage}`],
+      organizer: {
+        "@id": `${siteUrl}#organization`,
+      },
+      location: {
+        "@type": "Place",
+        name: "Quartier Libre",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Rouen",
+          addressCountry: "FR",
+        },
+      },
+      offers: {
+        "@type": "Offer",
+        url: `${siteUrl}/inscription`,
+        price: "0",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+  ],
+};
 
 const festivalCards = [
   {
@@ -42,6 +118,11 @@ const accessibilityItems = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FFF5E6]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       <section className="border-b-[6px] border-dotted border-[#FF8A65] bg-[#FFF5E6] pt-4 md:pt-10">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 pb-16 md:pb-20 lg:grid-cols-2">

@@ -18,11 +18,33 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { defaultOgImage } from "../lib/seo";
 
 export const metadata: Metadata = {
   title: "Programme",
   description:
     "Programme complet du festival Les Petits Chemins : matinée professionnelle, après-midi festif et informations pratiques.",
+  alternates: {
+    canonical: "/programme",
+  },
+  openGraph: {
+    title: "Programme - Festival Les Petits Chemins",
+    description:
+      "Decouvrez le programme complet du festival : matinee professionnelle et apres-midi festif ouvert a tous.",
+    url: "/programme",
+    images: [
+      {
+        url: defaultOgImage,
+        alt: "Programme du Festival Les Petits Chemins",
+      },
+    ],
+  },
+  twitter: {
+    title: "Programme - Festival Les Petits Chemins",
+    description:
+      "Decouvrez le programme complet du festival : matinee professionnelle et apres-midi festif ouvert a tous.",
+    images: [defaultOgImage],
+  },
 };
 
 type TimelineItem = {

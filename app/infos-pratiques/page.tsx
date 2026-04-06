@@ -12,11 +12,33 @@ import {
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ImageWithFallback } from "../components/ImageWithFallback";
+import { defaultOgImage } from "../lib/seo";
 
 export const metadata: Metadata = {
   title: "Infos pratiques",
   description:
     "Toutes les infos pratiques pour venir au festival Les Petits Chemins : adresse, acces, transports, accessibilite et FAQ.",
+  alternates: {
+    canonical: "/infos-pratiques",
+  },
+  openGraph: {
+    title: "Infos pratiques - Festival Les Petits Chemins",
+    description:
+      "Adresse, acces, transports, accessibilite et FAQ pour preparer votre venue au festival.",
+    url: "/infos-pratiques",
+    images: [
+      {
+        url: defaultOgImage,
+        alt: "Infos pratiques du Festival Les Petits Chemins",
+      },
+    ],
+  },
+  twitter: {
+    title: "Infos pratiques - Festival Les Petits Chemins",
+    description:
+      "Adresse, acces, transports, accessibilite et FAQ pour preparer votre venue au festival.",
+    images: [defaultOgImage],
+  },
 };
 
 type InfoCard = {
