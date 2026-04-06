@@ -1,9 +1,31 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "../lib/seo";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
   description:
     "Mentions légales et politique de confidentialité du festival Les Petits Chemins.",
+  alternates: {
+    canonical: "/mentions-legales",
+  },
+  openGraph: {
+    title: "Mentions legales - Festival Les Petits Chemins",
+    description:
+      "Mentions legales et politique de confidentialite du festival Les Petits Chemins.",
+    url: "/mentions-legales",
+    images: [
+      {
+        url: defaultOgImage,
+        alt: "Mentions legales du Festival Les Petits Chemins",
+      },
+    ],
+  },
+  twitter: {
+    title: "Mentions legales - Festival Les Petits Chemins",
+    description:
+      "Mentions legales et politique de confidentialite du festival Les Petits Chemins.",
+    images: [defaultOgImage],
+  },
 };
 
 export default function MentionsLegalesPage() {
