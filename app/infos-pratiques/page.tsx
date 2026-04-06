@@ -3,9 +3,7 @@ import {
   Car,
   CircleAlert,
   CircleQuestionMark,
-  Mail,
   MapPin,
-  Phone,
   Sparkles,
   TrainFront,
   Utensils,
@@ -280,19 +278,16 @@ export default function InfosPratiquesPage() {
           </p>
 
           <div className="mx-auto mt-8 flex max-w-md flex-col gap-3 rounded-2xl bg-white p-6 neo-border-thin">
+            <p className="text-base font-semibold text-[#424242]">
+              Association Le Pre de la Bataille
+            </p>
             <a
-              href="mailto:marie.claquin@lepredelabataille.fr"
-              className="inline-flex items-center justify-center gap-2 text-base font-semibold text-[#424242] hover:underline"
+              href="https://lepredelabataille.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base font-semibold text-[#424242] underline"
             >
-              <Mail className="h-5 w-5 text-[#F87171]" />
-              marie.claquin@lepredelabataille.fr
-            </a>
-            <a
-              href="tel:+33668462055"
-              className="inline-flex items-center justify-center gap-2 text-base font-semibold text-[#424242] hover:underline"
-            >
-              <Phone className="h-5 w-5 text-[#F87171]" />
-              06 68 46 20 55
+              lepredelabataille.fr
             </a>
           </div>
         </div>
