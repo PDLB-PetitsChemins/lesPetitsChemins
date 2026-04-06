@@ -1,12 +1,8 @@
 import {
   Accessibility,
-  BusFront,
   Car,
   CircleAlert,
   CircleQuestionMark,
-  Clock3,
-  FileText,
-  HeartHandshake,
   Mail,
   MapPin,
   Phone,
@@ -15,8 +11,15 @@ import {
   Utensils,
   type LucideIcon,
 } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ImageWithFallback } from "../components/ImageWithFallback";
+
+export const metadata: Metadata = {
+  title: "Infos pratiques",
+  description:
+    "Toutes les infos pratiques pour venir au festival Les Petits Chemins : adresse, acces, transports, accessibilite et FAQ.",
+};
 
 type InfoCard = {
   title: string;
@@ -24,6 +27,9 @@ type InfoCard = {
   iconBg: string;
   bg: string;
   items: string[];
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaNote?: string;
 };
 
 type FaqItem = {
@@ -40,7 +46,7 @@ const transportCards: InfoCard[] = [
     bg: "bg-[#DCFCE7]",
     items: [
       "Metro : arrêt Saint-Sever (accessible) ou Joffre-Mutualite (le plus proche)",
-      "Bus et TEOR : lignes 27, F1, F7, F9 et T5, a 200m",
+      "Ligne F1 - F3 - Arrêt Champlain.",
     ],
   },
   {
@@ -54,16 +60,6 @@ const transportCards: InfoCard[] = [
       "Acces facile depuis le centre-ville",
     ],
   },
-  {
-    title: "Besoin d'aide ?",
-    icon: BusFront,
-    iconBg: "bg-white",
-    bg: "bg-[#FCD34D]",
-    items: [
-      "Navette possible depuis un point de rassemblement",
-      "Contactez-nous pour en organiser une",
-    ],
-  },
 ];
 
 const accessibilityCards: InfoCard[] = [
@@ -73,20 +69,6 @@ const accessibilityCards: InfoCard[] = [
     iconBg: "bg-[#C4B5FD]",
     bg: "bg-white",
     items: ["Site de plain-pied, rampes d'acces", "Toilettes adaptees"],
-  },
-  {
-    title: "Accompagnement",
-    icon: HeartHandshake,
-    iconBg: "bg-[#C4B5FD]",
-    bg: "bg-white",
-    items: ["Accueil personnalise", "Benevoles formes sur place"],
-  },
-  {
-    title: "Documents FALC",
-    icon: FileText,
-    iconBg: "bg-[#C4B5FD]",
-    bg: "bg-white",
-    items: ["Supports Facile a Lire et a Comprendre", "Signaletique claire"],
   },
   {
     title: "Espace calme",
@@ -100,17 +82,10 @@ const accessibilityCards: InfoCard[] = [
     icon: Utensils,
     iconBg: "bg-[#C4B5FD]",
     bg: "bg-white",
-    items: ["Repas adaptes (sans allergenes)", "Regimes speciaux possibles"],
-  },
-  {
-    title: "Horaires souples",
-    icon: Clock3,
-    iconBg: "bg-[#C4B5FD]",
-    bg: "bg-white",
-    items: [
-      "Arrivez et partez quand vous voulez",
-      "Pas d'obligation de rester",
-    ],
+    items: ["Possibilite de restauration au Quartier Libre et autour."],
+    ctaLabel: "Reserver au restaurant",
+    ctaHref: "https://www.lebouillonpopote.org/contact-reservation",
+    ctaNote: "Reservation a l'avance recommandee.",
   },
 ];
 
@@ -118,32 +93,17 @@ const faqItems: FaqItem[] = [
   {
     question: "Faut-il s'inscrire ?",
     answer:
-      "Oui, mais c'est gratuit ! Ca nous aide a bien vous accueillir et a preparer les repas en quantite suffisante.",
+      "Oui, mais c'est gratuit ! Ca nous aide a bien vous accueillir et a organiser la journee.",
   },
   {
     question: "C'est payant ?",
     answer:
-      "Non, tout est gratuit : entree, animations, repas. C'est un festival accessible a tous, sans barriere financiere.",
+      "Non, tout est gratuit : entree et animations. C'est un festival accessible a tous, sans barriere financiere.",
   },
   {
-    question: "Je peux venir avec un accompagnant ?",
+    question: "Peut-on venir en voiture ?",
     answer:
-      "Bien sur ! Indiquez-le lors de l'inscription pour que nous puissions bien vous accueillir tous les deux.",
-  },
-  {
-    question: "Il y aura des enfants ?",
-    answer:
-      "Oui, c'est ouvert a tous les ages. L'apres-midi festif est particulierement adapte aux familles. Les enfants doivent etre accompagnes.",
-  },
-  {
-    question: "Je suis en situation de handicap, comment ca se passe ?",
-    answer:
-      "Tout est prevu : site accessible, espaces calmes, documents FALC et equipe formee. Contactez-nous pour preparer votre venue selon vos besoins.",
-  },
-  {
-    question: "Qui appeler en cas d'urgence le jour J ?",
-    answer: "Le jour du festival, contactez Marie Claquin au 06 68 46 20 55.",
-    highlight: true,
+      "Oui, il y a un parking gratuit sur place pour venir en voiture.",
   },
 ];
 
@@ -227,24 +187,24 @@ export default function InfosPratiquesPage() {
             Comment venir ?
           </h2>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
             {transportCards.map((card) => (
               <article
                 key={card.title}
                 className={`rounded-2xl p-8 neo-border-thin ${card.bg}`}
               >
                 <div
-                  className={`mx-auto flex w-fit rounded-3xl p-3.5 neo-border-thin md:mx-0 ${card.iconBg}`}
+                  className={`mx-auto flex w-fit rounded-3xl p-3.5 neo-border-thin ${card.iconBg}`}
                 >
                   <card.icon className="h-7 w-7 text-[#424242]" />
                 </div>
-                <h3 className="mt-4 text-center text-2xl font-bold text-[#424242] md:text-left">
+                <h3 className="mt-4 text-center text-2xl font-bold text-[#424242]">
                   {card.title}
                 </h3>
 
                 <div className="mt-4 space-y-2">
                   {card.items.map((item) => (
-                    <p key={item} className="text-base text-[#424242]">
+                    <p key={item} className="text-center text-base text-[#424242]">
                       {item}
                     </p>
                   ))}
@@ -261,28 +221,46 @@ export default function InfosPratiquesPage() {
             Le festival est 100 % accessible
           </h2>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
             {accessibilityCards.map((card) => (
               <article
                 key={card.title}
                 className={`rounded-2xl p-8 neo-border-thin ${card.bg}`}
               >
                 <div
-                  className={`mx-auto flex w-fit rounded-3xl p-3.5 neo-border-thin md:mx-0 ${card.iconBg}`}
+                  className={`mx-auto flex w-fit rounded-3xl p-3.5 neo-border-thin ${card.iconBg}`}
                 >
                   <card.icon className="h-7 w-7 text-[#424242]" />
                 </div>
-                <h3 className="mt-4 text-center text-2xl font-bold text-[#424242] md:text-left">
+                <h3 className="mt-4 text-center text-2xl font-bold text-[#424242]">
                   {card.title}
                 </h3>
 
                 <div className="mt-4 space-y-2">
                   {card.items.map((item) => (
-                    <p key={item} className="text-base text-[#424242]">
+                    <p key={item} className="text-center text-base text-[#424242]">
                       {item}
                     </p>
                   ))}
                 </div>
+
+                {card.ctaHref && card.ctaLabel && (
+                  <div className="mt-5 text-center">
+                    <a
+                      href={card.ctaHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="neo-hover inline-flex h-11 items-center justify-center rounded-lg bg-[#FCD34D] px-5 text-sm font-bold text-[#424242] neo-border-thin neo-shadow"
+                    >
+                      {card.ctaLabel}
+                    </a>
+                    {card.ctaNote && (
+                      <p className="mt-2 text-center text-sm font-semibold text-[#424242]">
+                        {card.ctaNote}
+                      </p>
+                    )}
+                  </div>
+                )}
               </article>
             ))}
           </div>

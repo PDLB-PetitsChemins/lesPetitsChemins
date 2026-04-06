@@ -4,7 +4,10 @@ import { Navigation } from "./components/Navigation";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Festival Les Petits Chemins",
+  title: {
+    default: "Festival Les Petits Chemins",
+    template: "Festival Les Petits Chemins - %s",
+  },
   description: "Festival citoyen et culturel à Rouen.",
 };
 
