@@ -8,13 +8,13 @@ const faqs = [
   {
     question: "Faut-il s'inscrire ?",
     answer:
-      "Oui, mais c'est gratuit ! Ça nous aide à bien vous accueillir et à préparer les repas en quantité suffisante.",
+      "Oui, mais c'est gratuit ! Cela nous aide à bien vous accueillir et à organiser la journée.",
     highlight: false,
   },
   {
     question: "C'est payant ?",
     answer:
-      "Non, tout est gratuit : entrée, animations, repas. C'est un festival accessible à tous, sans barrière financière.",
+      "Non, tout est gratuit : entrée et animations. C'est un festival accessible à tous, sans barrière financière.",
     highlight: false,
   },
   {
@@ -32,7 +32,7 @@ const faqs = [
   {
     question: "Je suis en situation de handicap, comment ça se passe ?",
     answer:
-      "Tout est prévu ! Le site est 100% accessible, nous avons des espaces calmes, des documents FALC, et une équipe formée. Contactez-nous pour qu'on organise ensemble votre venue selon vos besoins spécifiques.",
+      "Tout est prévu ! Le site est 100% accessible, nous avons des espaces calmes et une équipe formée. Contactez-nous pour qu'on organise ensemble votre venue selon vos besoins spécifiques.",
     highlight: false,
   },
   {

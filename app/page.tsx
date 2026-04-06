@@ -1,7 +1,6 @@
 import {
   Accessibility,
   Cloud,
-  FileText,
   Heart,
   MapPin,
   Star,
@@ -14,7 +13,7 @@ import { ImageWithFallback } from "./components/ImageWithFallback";
 const festivalCards = [
   {
     title: "Créer ensemble",
-    text: "12 résidents créent des improvisations avec des artistes professionnels",
+    text: "Un festival co-construit avec les résidents, les personnes accompagnées et les professionnels de l’association",
     bg: "bg-[#FECACA]",
     iconBg: "bg-[#F87171]",
     icon: Users,
@@ -37,8 +36,6 @@ const festivalCards = [
 
 const accessibilityItems = [
   { icon: Accessibility, label: "PMR", desc: "Accès complet" },
-  { icon: FileText, label: "FALC", desc: "Facile à lire et à comprendre" },
-  { icon: Heart, label: "Accueil personnalisé", desc: "Équipe formée" },
   { icon: Cloud, label: "Espace calme", desc: "Zone de repos" },
 ];
 
@@ -171,7 +168,7 @@ export default function Home() {
             Un festival accessible à tous
           </h2>
 
-          <div className="mx-auto grid max-w-76 grid-cols-2 gap-x-6 gap-y-8 md:max-w-4xl md:grid-cols-4">
+          <div className="mx-auto grid max-w-76 grid-cols-2 gap-x-6 gap-y-8 md:max-w-2xl md:grid-cols-2">
             {accessibilityItems.map((item) => (
               <div key={item.label} className="text-center">
                 <div className="mx-auto mb-3 w-fit rounded-[40px] bg-white p-6">

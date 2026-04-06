@@ -26,9 +26,12 @@ export function Footer() {
               Contact
             </h3>
             <div className="space-y-2 text-gray-300">
-              <p>Marie Claquin</p>
-              <p>marie.claquin@lepredelabataille.fr</p>
-              <p>06 68 46 20 55</p>
+              <a
+                href="mailto:marie.claquin@lepredelabataille.fr"
+                className="transition hover:text-[#FFD54F] hover:underline"
+              >
+                marie.claquin@lepredelabataille.fr
+              </a>
             </div>
           </div>
 
@@ -108,15 +111,15 @@ export function Footer() {
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
             <div className="neo-hover rounded-2xl bg-white p-3 neo-border-thin">
               <a
-                href="https://www.seinemaritime.fr/"
+                href="https://rouen.sensas.top/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Site Seine-Maritime"
+                aria-label="Site SENSAS Rouen"
                 className="block rounded-xl"
               >
                 <Image
-                  src="/76_seine_maritime.png"
-                  alt="Logo Seine-Maritime Le Département"
+                  src="/sensas_logo.png"
+                  alt="Logo SENSAS Rouen"
                   width={320}
                   height={300}
                   className="mx-auto h-24 w-full object-contain"

@@ -14,10 +14,16 @@ import {
   Shirt,
   Sparkles,
   Users,
-  Utensils,
   type LucideIcon,
 } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Programme",
+  description:
+    "Programme complet du festival Les Petits Chemins : matinée professionnelle, après-midi festif et informations pratiques.",
+};
 
 type TimelineItem = {
   time: string;
@@ -60,17 +66,10 @@ const timelineItems: TimelineItem[] = [
   },
   {
     time: "10h - 10h40",
-    title: "Ateliers CAJ et FH",
+    title: "Présentation CAJ et FH",
     icon: Sparkles,
     iconBg: "bg-[#34D399]",
     rowBg: "bg-[#DCFCE7]",
-  },
-  {
-    time: "10h40 - 10h50",
-    title: "Interlude artistique Kocasse",
-    icon: Music2,
-    iconBg: "bg-[#F9A8D4]",
-    rowBg: "bg-white",
   },
   {
     time: "10h50 - 11h",
@@ -81,17 +80,10 @@ const timelineItems: TimelineItem[] = [
   },
   {
     time: "11h - 11h40",
-    title: "Ateliers SAVS et FAM",
+    title: "Présentation SAVS et FAM",
     icon: Sparkles,
     iconBg: "bg-[#34D399]",
     rowBg: "bg-white",
-  },
-  {
-    time: "11h40 - 11h50",
-    title: "Interlude artistique Kocasse",
-    icon: Music2,
-    iconBg: "bg-[#F9A8D4]",
-    rowBg: "bg-[#DCFCE7]",
   },
   {
     time: "12h - 12h15",
@@ -162,7 +154,7 @@ const audienceCards: AudienceCard[] = [
       "Tout le monde !",
       "Familles",
       "Habitants du quartier",
-      "Autres structures médico-sociales",
+      "Personnes accompagnées et résidents d'ESMS du territoire",
       "Curieux et curieuses",
     ],
   },
@@ -170,7 +162,6 @@ const audienceCards: AudienceCard[] = [
 
 const comfortItems = [
   { label: "Accueil dès 9h", icon: Clock3 },
-  { label: "Repas léger offert", icon: Utensils },
   { label: "Temps calmes prévus", icon: Sparkles },
   { label: "100% accessible", icon: GraduationCap },
 ];
@@ -248,7 +239,7 @@ export default function ProgrammePage() {
             <div className="mt-6 flex flex-col items-center justify-center gap-3 text-[#424242] sm:flex-row">
               <div className="inline-flex items-center gap-2 rounded-[33px] bg-[#34D399] px-6 py-3 neo-border-thin">
                 <Clock3 className="h-5 w-5" />
-                <span className="font-extrabold">9h30 - 12h30</span>
+                <span className="font-extrabold">9h00 - 12h30</span>
               </div>
               <div className="inline-flex items-center gap-2 rounded-[33px] bg-[#FCD34D] px-6 py-3 neo-border-thin">
                 <Clock3 className="h-5 w-5" />
@@ -369,7 +360,7 @@ export default function ProgrammePage() {
             Comment ça se passe ?
           </h2>
 
-          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-6 md:grid-cols-4">
+          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {comfortItems.map((item) => (
               <div key={item.label} className="text-center">
                 <div className="mx-auto w-fit rounded-[40px] bg-white p-6 neo-border-thin">
