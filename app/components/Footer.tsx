@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Camera, Globe, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -44,18 +43,13 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-white">
               <li>
-                <Link href="#" className="transition hover:text-[#FFD54F]">
+                <Link href="/mentions-legales" className="transition hover:text-[#FFD54F]">
                   Mentions légales
                 </Link>
               </li>
               <li>
-                <Link href="#" className="transition hover:text-[#FFD54F]">
+                <Link href="/mentions-legales#politique-confidentialite" className="transition hover:text-[#FFD54F]">
                   Politique de confidentialité
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="transition hover:text-[#FFD54F]">
-                  CGU
                 </Link>
               </li>
             </ul>
@@ -69,27 +63,15 @@ export function Footer() {
               Suivez-nous
             </h3>
             <div className="flex space-x-3">
-              <Link
-                href="#"
+              <a
+                href="https://www.linkedin.com/company/association-le-pre-de-la-bataille/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-3xl bg-white p-2 text-[#1A1A1A] transition hover:bg-[#FFD54F]"
-                aria-label="Facebook"
+                aria-label="LinkedIn"
               >
-                <Globe size={32} />
-              </Link>
-              <Link
-                href="#"
-                className="rounded-3xl bg-white p-2 text-[#1A1A1A] transition hover:bg-[#FFD54F]"
-                aria-label="Instagram"
-              >
-                <Camera size={32} />
-              </Link>
-              <Link
-                href="#"
-                className="rounded-3xl bg-white p-2 text-[#1A1A1A] transition hover:bg-[#FFD54F]"
-                aria-label="Email"
-              >
-                <Mail size={32} />
-              </Link>
+                <span className="text-2xl font-black leading-none">in</span>
+              </a>
             </div>
           </div>
         </div>
