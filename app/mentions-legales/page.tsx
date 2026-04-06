@@ -9,21 +9,21 @@ export const metadata: Metadata = {
     canonical: "/mentions-legales",
   },
   openGraph: {
-    title: "Mentions legales - Festival Les Petits Chemins",
+    title: "Mentions légales - Festival Les Petits Chemins",
     description:
-      "Mentions legales et politique de confidentialite du festival Les Petits Chemins.",
+      "Mentions légales et politique de confidentialité du festival Les Petits Chemins.",
     url: "/mentions-legales",
     images: [
       {
         url: defaultOgImage,
-        alt: "Mentions legales du Festival Les Petits Chemins",
+        alt: "Mentions légales du Festival Les Petits Chemins",
       },
     ],
   },
   twitter: {
-    title: "Mentions legales - Festival Les Petits Chemins",
+    title: "Mentions légales - Festival Les Petits Chemins",
     description:
-      "Mentions legales et politique de confidentialite du festival Les Petits Chemins.",
+      "Mentions légales et politique de confidentialité du festival Les Petits Chemins.",
     images: [defaultOgImage],
   },
 };
@@ -54,7 +54,7 @@ export default function MentionsLegalesPage() {
               <strong>Nom du site:</strong> Festival Les Petits Chemins
             </p>
             <p>
-              <strong>Contact:</strong> marie.claquin@lepredelabataille.fr
+              <strong>Contact:</strong> festivalpetitschemins@gmail.com
             </p>
             <p>
               <strong>Hébergement:</strong> Vercel Inc.

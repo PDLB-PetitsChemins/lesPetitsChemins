@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Programme - Festival Les Petits Chemins",
     description:
-      "Decouvrez le programme complet du festival : matinee professionnelle et apres-midi festif ouvert a tous.",
+      "Découvrez le programme complet du festival : matinée professionnelle et après-midi festif ouvert à tous.",
     url: "/programme",
     images: [
       {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Programme - Festival Les Petits Chemins",
     description:
-      "Decouvrez le programme complet du festival : matinee professionnelle et apres-midi festif ouvert a tous.",
+      "Découvrez le programme complet du festival : matinée professionnelle et après-midi festif ouvert à tous.",
     images: [defaultOgImage],
   },
 };

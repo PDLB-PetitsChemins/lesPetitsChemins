@@ -14,14 +14,14 @@ import { defaultOgImage, siteUrl } from "./lib/seo";
 
 export const metadata: Metadata = {
   description:
-    "Festival citoyen et culturel au Quartier Libre a Rouen, le 4 juin 2026. Matinee professionnelle et apres-midi ouvert a tous.",
+    "Festival citoyen et culturel au Quartier Libre à Rouen, le 4 juin 2026. Matinée professionnelle et après-midi ouvert à tous.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Festival Les Petits Chemins",
     description:
-      "Festival citoyen et culturel au Quartier Libre a Rouen, le 4 juin 2026.",
+      "Festival citoyen et culturel au Quartier Libre à Rouen, le 4 juin 2026.",
     url: siteUrl,
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Festival Les Petits Chemins",
     description:
-      "Festival citoyen et culturel au Quartier Libre a Rouen, le 4 juin 2026.",
+      "Festival citoyen et culturel au Quartier Libre à Rouen, le 4 juin 2026.",
     images: [defaultOgImage],
   },
 };
@@ -44,7 +44,7 @@ const structuredData = {
     {
       "@type": "Organization",
       "@id": `${siteUrl}#organization`,
-      name: "Association Le Pre de la Bataille",
+      name: "Association Le Pré de la Bataille",
       url: siteUrl,
       email: "dpo@lepredelabataille.fr",
       sameAs: [
@@ -56,7 +56,7 @@ const structuredData = {
       "@id": `${siteUrl}#festival-les-petits-chemins-2026`,
       name: "Festival Les Petits Chemins",
       description:
-        "Festival citoyen et culturel a Rouen : matinee professionnelle et apres-midi festif ouvert a tous.",
+        "Festival citoyen et culturel à Rouen : matinée professionnelle et après-midi festif ouvert à tous.",
       startDate: "2026-06-04T09:00:00+02:00",
       endDate: "2026-06-04T17:30:00+02:00",
       eventStatus: "https://schema.org/EventScheduled",
@@ -173,14 +173,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-76">
+            <div className="relative mx-auto w-full max-w-120 lg:max-w-136">
               <div className="absolute left-1/2 -top-10 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#FCD34D]" />
               <ImageWithFallback
-                src="/hero_img.png"
+                src="/hero_img_20260406.png"
                 alt="Personnes diverses célébrant ensemble"
-                className="relative z-10 aspect-square w-full rounded-lg object-cover neo-border-thin"
-                width={304}
-                height={304}
+                className="relative z-10 aspect-4/3 w-full rounded-lg object-cover neo-border-thin"
+                width={544}
+                height={408}
               />
               <div className="absolute left-1/2 -bottom-10 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#34D399]" />
             </div>
@@ -274,7 +274,7 @@ export default function Home() {
             className="mx-auto mb-12 max-w-xl text-center text-3xl font-extrabold text-[#424242] md:text-5xl"
             style={{ fontFamily: "Nunito Sans, sans-serif" }}
           >
-            Au coeur de la friche culturelle Quartier Libre
+            Au cœur de la friche culturelle Quartier Libre
           </h2>
 
           <div className="grid items-center gap-10 lg:grid-cols-2">

@@ -26,10 +26,10 @@ export function Footer() {
             </h3>
             <div className="space-y-2 text-gray-300">
               <a
-                href="mailto:marie.claquin@lepredelabataille.fr"
+                href="mailto:festivalpetitschemins@gmail.com"
                 className="transition hover:text-[#FFD54F] hover:underline"
               >
-                marie.claquin@lepredelabataille.fr
+                festivalpetitschemins@gmail.com
               </a>
             </div>
           </div>

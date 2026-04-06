@@ -3,6 +3,7 @@ import {
   Car,
   CircleAlert,
   CircleQuestionMark,
+  Mail,
   MapPin,
   Sparkles,
   TrainFront,
@@ -17,14 +18,14 @@ import { defaultOgImage } from "../lib/seo";
 export const metadata: Metadata = {
   title: "Infos pratiques",
   description:
-    "Toutes les infos pratiques pour venir au festival Les Petits Chemins : adresse, acces, transports, accessibilite et FAQ.",
+    "Toutes les infos pratiques pour venir au festival Les Petits Chemins : adresse, accès, transports, accessibilité et FAQ.",
   alternates: {
     canonical: "/infos-pratiques",
   },
   openGraph: {
     title: "Infos pratiques - Festival Les Petits Chemins",
     description:
-      "Adresse, acces, transports, accessibilite et FAQ pour preparer votre venue au festival.",
+      "Adresse, accès, transports, accessibilité et FAQ pour préparer votre venue au festival.",
     url: "/infos-pratiques",
     images: [
       {
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Infos pratiques - Festival Les Petits Chemins",
     description:
-      "Adresse, acces, transports, accessibilite et FAQ pour preparer votre venue au festival.",
+      "Adresse, accès, transports, accessibilité et FAQ pour préparer votre venue au festival.",
     images: [defaultOgImage],
   },
 };
@@ -65,7 +66,7 @@ const transportCards: InfoCard[] = [
     iconBg: "bg-[#34D399]",
     bg: "bg-[#DCFCE7]",
     items: [
-      "Metro : arrêt Saint-Sever (accessible) ou Joffre-Mutualite (le plus proche)",
+      "Métro : arrêt Saint-Sever (accessible) ou Joffre-Mutualité (le plus proche)",
       "Ligne F1 - F3 - Arrêt Champlain.",
     ],
   },
@@ -76,19 +77,19 @@ const transportCards: InfoCard[] = [
     bg: "bg-[#F3E8FF]",
     items: [
       "Parking gratuit sur site",
-      "Places PMR reservees a l'entree",
-      "Acces facile depuis le centre-ville",
+      "Places PMR réservées à l'entrée",
+      "Accès facile depuis le centre-ville",
     ],
   },
 ];
 
 const accessibilityCards: InfoCard[] = [
   {
-    title: "Mobilite",
+    title: "Mobilité",
     icon: Accessibility,
     iconBg: "bg-[#C4B5FD]",
     bg: "bg-white",
-    items: ["Site de plain-pied, rampes d'acces", "Toilettes adaptees"],
+    items: ["Site de plain-pied, rampes d'accès", "Toilettes adaptées"],
   },
   {
     title: "Espace calme",
@@ -102,10 +103,10 @@ const accessibilityCards: InfoCard[] = [
     icon: Utensils,
     iconBg: "bg-[#C4B5FD]",
     bg: "bg-white",
-    items: ["Possibilite de restauration au Quartier Libre et autour."],
-    ctaLabel: "Reserver au restaurant",
+    items: ["Possibilité de restauration au Quartier Libre et autour."],
+    ctaLabel: "Réserver au restaurant",
     ctaHref: "https://www.lebouillonpopote.org/contact-reservation",
-    ctaNote: "Reservation a l'avance recommandee.",
+    ctaNote: "Réservation à l'avance recommandée.",
   },
 ];
 
@@ -113,12 +114,12 @@ const faqItems: FaqItem[] = [
   {
     question: "Faut-il s'inscrire ?",
     answer:
-      "Oui, mais c'est gratuit ! Ca nous aide a bien vous accueillir et a organiser la journee.",
+      "Oui, mais c'est gratuit ! Ça nous aide à bien vous accueillir et à organiser la journée.",
   },
   {
     question: "C'est payant ?",
     answer:
-      "Non, tout est gratuit : entree et animations. C'est un festival accessible a tous, sans barriere financiere.",
+      "Non, tout est gratuit : entrée et animations. C'est un festival accessible à tous, sans barrière financière.",
   },
   {
     question: "Peut-on venir en voiture ?",
@@ -138,7 +139,7 @@ export default function InfosPratiquesPage() {
               Venir au festival
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base font-semibold text-[#424242] md:text-xl">
-              Tout ce qu&apos;il faut savoir pour une journee{" "}
+              Tout ce qu&apos;il faut savoir pour une journée{" "}
               <span className="relative inline-block">
                 sereine
                 <span
@@ -172,7 +173,7 @@ export default function InfosPratiquesPage() {
                   <MapPin className="h-6 w-6 text-[#424242]" />
                 </span>
                 <h2 className="text-2xl font-extrabold text-[#424242]">
-                  Ou sommes-nous ?
+                  Où sommes-nous ?
                 </h2>
               </div>
 
@@ -290,26 +291,25 @@ export default function InfosPratiquesPage() {
       <section className="border-b-[6px] border-dotted border-[#F87171] bg-[#F9A8D4]/70 py-14 md:py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="mx-auto mt-7 max-w-3xl text-center text-3xl font-extrabold text-[#424242] md:text-5xl">
-            Une question, un besoin specifique ?
+            Une question, un besoin spécifique ?
           </h2>
 
           <p className="mt-6 text-xl font-semibold text-[#424242]">
-            On s&apos;adapte a vous,
+            On s&apos;adapte à vous,
             <br />
             pas l&apos;inverse !
           </p>
 
           <div className="mx-auto mt-8 flex max-w-md flex-col gap-3 rounded-2xl bg-white p-6 neo-border-thin">
             <p className="text-base font-semibold text-[#424242]">
-              Association Le Pre de la Bataille
+              Association Le Pré de la Bataille
             </p>
             <a
-              href="https://lepredelabataille.fr/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-base font-semibold text-[#424242] underline"
+              href="mailto:festivalpetitschemins@gmail.com"
+              className="inline-flex items-center justify-center gap-2 text-base font-semibold text-[#424242] hover:underline"
             >
-              lepredelabataille.fr
+              <Mail className="h-5 w-5 text-[#F87171]" />
+              festivalpetitschemins@gmail.com
             </a>
           </div>
         </div>
@@ -318,7 +318,7 @@ export default function InfosPratiquesPage() {
       <section className="bg-[#FFF5E6] py-14 md:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="mt-7 text-center text-3xl font-extrabold text-[#424242] md:text-5xl">
-            Questions frequentes
+            Questions fréquentes
           </h2>
 
           <div className="mt-10 space-y-6">

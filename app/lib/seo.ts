@@ -12,4 +12,4 @@ function normalizeSiteUrl(): string {
 }
 
 export const siteUrl = normalizeSiteUrl();
-export const defaultOgImage = "/hero_img.png";
+export const defaultOgImage = "/hero_img_20260406.png";
