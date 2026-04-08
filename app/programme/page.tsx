@@ -88,7 +88,8 @@ const timelineItems: TimelineItem[] = [
   },
   {
     time: "10h - 10h40",
-    title: "Présentation CAJ et FH",
+    title:
+      "Présentation du Centre d'Activités de Jour et du Foyer d'Hébergement",
     icon: Sparkles,
     iconBg: "bg-[#34D399]",
     rowBg: "bg-[#DCFCE7]",
@@ -102,13 +103,14 @@ const timelineItems: TimelineItem[] = [
   },
   {
     time: "11h - 11h40",
-    title: "Présentation SAVS et FAM",
+    title:
+      "Présentation du Service d'Accompagnement à la Vie Sociale et du Foyer d'Accueil Médicalisé",
     icon: Sparkles,
     iconBg: "bg-[#34D399]",
     rowBg: "bg-white",
   },
   {
-    time: "12h - 12h15",
+    time: "12h - 12h30",
     title: "Projection capsule vidéo et clôture",
     icon: CalendarDays,
     iconBg: "bg-[#34D399]",
@@ -119,7 +121,8 @@ const timelineItems: TimelineItem[] = [
 const afternoonCards: AfternoonCard[] = [
   {
     title: "Stands citoyens",
-    description: "Tenus par nos résidents : découvrez leurs actions sur le territoire.",
+    description:
+      "Tenus par les personnes accompagnées et les professionnels : découvrez leurs actions sur le territoire.",
     icon: MessageSquare,
     bg: "bg-white",
     iconBg: "bg-[#FCD34D]",
@@ -161,10 +164,10 @@ const audienceCards: AudienceCard[] = [
     iconBg: "bg-[#34D399]",
     icon: Building2,
     items: [
-      "Professionnels médico-sociaux",
+      "Tous les travailleurs sociaux",
       "Structures ESMS",
       "Institutionnels et partenaires",
-      "Étudiants en formation (IDS)",
+      "Étudiants en formation",
     ],
   },
   {
@@ -176,7 +179,7 @@ const audienceCards: AudienceCard[] = [
       "Tout le monde !",
       "Familles",
       "Habitants du quartier",
-      "Personnes accompagnées et résidents d'ESMS du territoire",
+      "Personnes accompagnées d'ESMS du territoire",
       "Curieux et curieuses",
     ],
   },
@@ -192,7 +195,10 @@ function DotsRow({ colorClass }: { colorClass: string }) {
   return (
     <div className="mx-auto flex w-fit items-center justify-center gap-1.5">
       {Array.from({ length: 21 }).map((_, index) => (
-        <span key={`programme-dot-${colorClass}-${index}`} className={`h-1.5 w-1.5 rounded-full ${colorClass}`} />
+        <span
+          key={`programme-dot-${colorClass}-${index}`}
+          className={`h-1.5 w-1.5 rounded-full ${colorClass}`}
+        />
       ))}
     </div>
   );
@@ -242,7 +248,9 @@ export default function ProgrammePage() {
               </div>
             </div>
 
-            <h1 className="mt-8 text-4xl font-black text-[#424242] md:text-6xl">Programme de la journée</h1>
+            <h1 className="mt-8 text-4xl font-black text-[#424242] md:text-6xl">
+              Programme de la journée
+            </h1>
 
             <div className="mx-auto mt-5 max-w-2xl">
               <p className="text-base font-semibold text-[#424242] md:text-xl">
@@ -287,20 +295,28 @@ export default function ProgrammePage() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-[#1A1A1A] md:text-lg">
-            Pour les professionnels du secteur médico-social et les partenaires institutionnels.
+            Pour les professionnels du secteur social, médico-social et les
+            partenaires institutionnels.
           </p>
 
           <div className="mt-8 rounded-2xl bg-white p-4 neo-border-thin md:p-6">
             <div className="space-y-4">
               {timelineItems.map((item) => (
-                <article key={item.time} className={`rounded-2xl p-4 neo-border-thin ${item.rowBg}`}>
+                <article
+                  key={item.time}
+                  className={`rounded-2xl p-4 neo-border-thin ${item.rowBg}`}
+                >
                   <div className="flex items-start gap-4">
                     <div className={`rounded-2xl p-2.5 ${item.iconBg}`}>
                       <item.icon className="h-5 w-5 text-[#424242]" />
                     </div>
                     <div>
-                      <p className="text-base font-bold text-[#424242] md:text-lg">{item.time}</p>
-                      <p className="mt-1 text-base text-[#424242]">{item.title}</p>
+                      <p className="text-base font-bold text-[#424242] md:text-lg">
+                        {item.time}
+                      </p>
+                      <p className="mt-1 text-base text-[#424242]">
+                        {item.title}
+                      </p>
                     </div>
                   </div>
                 </article>
@@ -335,11 +351,17 @@ export default function ProgrammePage() {
                   card.title.includes("DJ") ? "md:col-span-2" : ""
                 }`}
               >
-                <div className={`mx-auto flex w-fit rounded-3xl p-3.5 neo-border-thin md:mx-0 ${card.iconBg}`}>
+                <div
+                  className={`mx-auto flex w-fit rounded-3xl p-3.5 neo-border-thin md:mx-0 ${card.iconBg}`}
+                >
                   <card.icon className="h-7 w-7 text-[#424242]" />
                 </div>
-                <h3 className="mt-4 text-center text-2xl font-bold text-[#424242] md:text-left">{card.title}</h3>
-                <p className="mt-2 text-center text-base text-[#424242] md:text-left">{card.description}</p>
+                <h3 className="mt-4 text-center text-2xl font-bold text-[#424242] md:text-left">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-center text-base text-[#424242] md:text-left">
+                  {card.description}
+                </p>
               </article>
             ))}
           </div>
@@ -348,22 +370,34 @@ export default function ProgrammePage() {
 
       <section className="border-b-[6px] border-dotted border-[#F87171] bg-white py-14 md:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-extrabold text-[#424242] md:text-5xl">Pour qui ?</h2>
+          <h2 className="text-center text-3xl font-extrabold text-[#424242] md:text-5xl">
+            Pour qui ?
+          </h2>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {audienceCards.map((card) => (
-              <article key={card.title} className={`rounded-2xl p-8 neo-border-thin ${card.bg}`}>
+              <article
+                key={card.title}
+                className={`rounded-2xl p-8 neo-border-thin ${card.bg}`}
+              >
                 <div className="mb-5 flex items-center justify-center gap-3 md:justify-start">
                   <div className={`rounded-2xl p-2.5 ${card.iconBg}`}>
                     <card.icon className="h-5 w-5 text-[#424242]" />
                   </div>
-                  <h3 className="text-center text-2xl font-extrabold text-[#424242] md:text-left">{card.title}</h3>
+                  <h3 className="text-center text-2xl font-extrabold text-[#424242] md:text-left">
+                    {card.title}
+                  </h3>
                 </div>
 
                 <div className="space-y-3">
                   {card.items.map((item) => (
-                    <div key={item} className="flex items-start gap-3 rounded-xl bg-white/70 p-3 neo-border-thin">
-                      <span className={`mt-1 block h-3 w-3 shrink-0 rounded-full ${card.iconBg}`} />
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 rounded-xl bg-white/70 p-3 neo-border-thin"
+                    >
+                      <span
+                        className={`mt-1 block h-3 w-3 shrink-0 rounded-full ${card.iconBg}`}
+                      />
                       <p className="text-base text-[#424242]">{item}</p>
                     </div>
                   ))}
@@ -388,7 +422,9 @@ export default function ProgrammePage() {
                 <div className="mx-auto w-fit rounded-[40px] bg-white p-6 neo-border-thin">
                   <item.icon className="h-8 w-8 text-[#424242]" />
                 </div>
-                <p className="mt-3 text-lg font-bold text-[#424242]">{item.label}</p>
+                <p className="mt-3 text-lg font-bold text-[#424242]">
+                  {item.label}
+                </p>
               </div>
             ))}
           </div>
@@ -398,9 +434,12 @@ export default function ProgrammePage() {
       <section className="bg-white py-14 md:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl bg-white p-8 text-center neo-border-thin md:p-10">
-            <h2 className="text-3xl font-extrabold text-[#424242] md:text-4xl">Ça vous dit ?</h2>
+            <h2 className="text-3xl font-extrabold text-[#424242] md:text-4xl">
+              Ça vous dit ?
+            </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-[#424242] md:text-lg">
-              L&apos;inscription est gratuite et nous aide à bien vous accueillir.
+              L&apos;inscription est gratuite et nous aide à bien vous
+              accueillir.
             </p>
 
             <div className="mt-8">
@@ -428,7 +467,8 @@ export default function ProgrammePage() {
               <Scissors className="h-5 w-5 text-[#424242]" />
             </span>
             <p className="text-sm font-semibold text-[#424242] md:text-base">
-              Quartier Libre: réparation de vélo, friperie, couture et plein d&apos;initiatives citoyennes.
+              Quartier Libre: réparation de vélo, friperie, couture et plein
+              d&apos;initiatives citoyennes.
             </p>
           </div>
         </div>

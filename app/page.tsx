@@ -89,7 +89,7 @@ const structuredData = {
 const festivalCards = [
   {
     title: "Créer ensemble",
-    text: "Un festival co-construit avec les résidents, les personnes accompagnées et les professionnels de l’association",
+    text: "Un festival co-construit avec les personnes accompagnées et les professionnels de l’Association",
     bg: "bg-[#FECACA]",
     iconBg: "bg-[#F87171]",
     icon: Users,
