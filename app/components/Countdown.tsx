@@ -103,13 +103,13 @@ export function Countdown() {
           </div>
 
           <p
-            className="my-4 text-center text-3xl font-bold text-[#424242]"
+            className="my-4 text-center text-3xl font-bold text-[#424242] md:hidden"
             style={{ fontFamily: "Nunito Sans, sans-serif" }}
           >
             et
           </p>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4 md:hidden">
             {timeBlocks.map((block) => (
               <div
                 key={block.label}
