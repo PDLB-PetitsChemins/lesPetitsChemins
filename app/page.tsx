@@ -161,16 +161,16 @@ export default function Home() {
                 <span>Quartier Libre - Rouen</span>
               </div>
 
-              <div className="mx-auto mt-8 flex w-full max-w-sm flex-col gap-4 lg:mx-0">
+              <div className="mx-auto mt-8 flex w-full max-w-sm flex-col gap-4 lg:mx-0 lg:max-w-xl lg:flex-row">
                 <AnimatedLink
                   href="/inscription"
-                  className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-[#F87171] px-6 text-base font-extrabold text-[#424242] neo-border-thin neo-shadow"
+                  className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-[#F87171] px-6 text-base font-extrabold text-[#424242] neo-border-thin neo-shadow lg:flex-1"
                 >
                   Je m&apos;inscris
                 </AnimatedLink>
                 <AnimatedLink
                   href="/programme"
-                  className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-white px-6 text-base font-semibold text-[#424242] neo-border-thin neo-shadow"
+                  className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-white px-6 text-base font-semibold text-[#424242] neo-border-thin neo-shadow lg:flex-1"
                 >
                   Je découvre le programme
                 </AnimatedLink>
