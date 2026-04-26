@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { ChevronDown, Mail, Users, Briefcase } from "lucide-react";
 import { ImageWithFallback } from "../components/ImageWithFallback";
+import { HeroImageMotion, StaggerRevealCard } from "../components/MotionPrimitives";
 
 const faqs = [
   {
@@ -64,6 +66,7 @@ type InscriptionTab = "individuel" | "professionnel";
 
 export default function InscriptionPage() {
   const [activeTab, setActiveTab] = useState<InscriptionTab>("individuel");
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (
@@ -106,7 +109,7 @@ export default function InscriptionPage() {
               </span>
             </p>
 
-            <div className="mx-auto mt-12 max-w-md">
+            <HeroImageMotion className="mx-auto mt-12 max-w-md">
               <ImageWithFallback
                 src="/inscription_hero.png"
                 alt="Participants au festival"
@@ -114,7 +117,7 @@ export default function InscriptionPage() {
                 width={500}
                 height={280}
               />
-            </div>
+            </HeroImageMotion>
           </div>
         </div>
       </section>
@@ -133,13 +136,16 @@ export default function InscriptionPage() {
 
           {/* Onglets */}
           <div className="mx-auto flex max-w-lg justify-center gap-4 sm:gap-6">
-            <button
+            <motion.button
               onClick={() => setActiveTab("individuel")}
               className={`flex flex-1 flex-col items-center gap-4 rounded-2xl px-4 py-8 text-center neo-border-thin transition-colors ${
                 activeTab === "individuel"
                   ? "bg-[#FCD34D]"
                   : "bg-[#FFF5E6] hover:bg-[#FEF3C7]"
               }`}
+              whileHover={shouldReduceMotion ? undefined : { rotate: -0.8, y: -2 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 360, damping: 22 }}
             >
               <div
                 className={`flex h-12 w-12 items-center justify-center rounded-full ${
@@ -153,15 +159,18 @@ export default function InscriptionPage() {
               <span className="text-base font-bold text-[#424242]">
                 À titre individuel / en famille
               </span>
-            </button>
+            </motion.button>
 
-            <button
+            <motion.button
               onClick={() => setActiveTab("professionnel")}
               className={`flex flex-1 flex-col items-center gap-4 rounded-2xl px-4 py-8 text-center neo-border-thin transition-colors ${
                 activeTab === "professionnel"
                   ? "bg-[#34D399]"
                   : "bg-[#DCFCE7] hover:bg-[#BBF7D0]"
               }`}
+              whileHover={shouldReduceMotion ? undefined : { rotate: 0.8, y: -2 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 360, damping: 22 }}
             >
               <div
                 className={`flex h-12 w-12 items-center justify-center rounded-full ${
@@ -175,7 +184,7 @@ export default function InscriptionPage() {
               <span className="text-base font-bold text-[#424242]">
                 À titre professionnel / Au nom d&apos;une structure
               </span>
-            </button>
+            </motion.button>
           </div>
 
           {/* Formulaire Tally */}
@@ -212,7 +221,7 @@ export default function InscriptionPage() {
             Une question, une suggestion, une envie de participer ?
           </h2>
 
-          <div className="mx-auto mt-8 flex max-w-md flex-col gap-3 rounded-2xl bg-white p-6 neo-border-thin">
+          <StaggerRevealCard index={0} className="mx-auto mt-8 flex max-w-md flex-col gap-3 rounded-2xl bg-white p-6 neo-border-thin">
             <a
               href="mailto:festivalpetitschemins@gmail.com"
               className="inline-flex items-center justify-center gap-2 text-base font-semibold text-[#424242] hover:underline"
@@ -220,7 +229,7 @@ export default function InscriptionPage() {
               <Mail className="h-5 w-5 text-[#F87171]" />
               festivalpetitschemins@gmail.com
             </a>
-          </div>
+          </StaggerRevealCard>
         </div>
       </section>
 
@@ -231,13 +240,14 @@ export default function InscriptionPage() {
             Questions fréquentes
           </h2>
           <div className="flex flex-col gap-6">
-            {faqs.map((faq) => (
-              <FaqItem
-                key={faq.question}
-                question={faq.question}
-                answer={faq.answer}
-                highlight={faq.highlight}
-              />
+            {faqs.map((faq, index) => (
+              <StaggerRevealCard key={faq.question} index={index}>
+                <FaqItem
+                  question={faq.question}
+                  answer={faq.answer}
+                  highlight={faq.highlight}
+                />
+              </StaggerRevealCard>
             ))}
           </div>
         </div>

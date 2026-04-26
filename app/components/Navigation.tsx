@@ -36,7 +36,7 @@ export function Navigation() {
               className="hidden text-base font-semibold text-[#44403C] xl:block"
               style={{ fontFamily: "Nunito Sans, sans-serif" }}
             >
-              Festival Les petits chemins
+              Festival Les Petits Chemins Citoyens
             </span>
           </Link>
 

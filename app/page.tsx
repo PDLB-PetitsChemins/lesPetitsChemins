@@ -7,9 +7,13 @@ import {
   Users,
 } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Countdown } from "./components/Countdown";
 import { ImageWithFallback } from "./components/ImageWithFallback";
+import {
+  AnimatedLink,
+  HeroImageMotion,
+  StaggerRevealCard,
+} from "./components/MotionPrimitives";
 import { defaultOgImage, siteUrl } from "./lib/seo";
 
 export const metadata: Metadata = {
@@ -131,7 +135,7 @@ export default function Home() {
                 className="mx-auto max-w-xs text-4xl leading-tight font-black text-[#424242] md:max-w-lg md:text-6xl lg:mx-0"
                 style={{ fontFamily: "Nunito Sans, sans-serif" }}
               >
-                Festival Les Petits Chemins
+                Festival Les Petits Chemins Citoyens
               </h1>
 
               <div className="mx-auto mt-7 max-w-sm md:max-w-xl lg:mx-0 lg:w-fit lg:max-w-none">
@@ -158,22 +162,26 @@ export default function Home() {
               </div>
 
               <div className="mx-auto mt-8 flex w-full max-w-sm flex-col gap-4 lg:mx-0">
-                <Link
+                <AnimatedLink
                   href="/inscription"
                   className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-[#F87171] px-6 text-base font-extrabold text-[#424242] neo-border-thin neo-shadow"
                 >
                   Je m&apos;inscris
-                </Link>
-                <Link
+                </AnimatedLink>
+                <AnimatedLink
                   href="/programme"
                   className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-white px-6 text-base font-semibold text-[#424242] neo-border-thin neo-shadow"
                 >
                   Je découvre le programme
-                </Link>
+                </AnimatedLink>
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-120 lg:max-w-136">
+            <HeroImageMotion
+              className="relative mx-auto w-full max-w-120 lg:max-w-136"
+              revealMode="onLoad"
+              delay={0.25}
+            >
               <div className="absolute left-1/2 -top-10 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#FCD34D]" />
               <ImageWithFallback
                 src="/hero_img_20260406.png"
@@ -183,7 +191,7 @@ export default function Home() {
                 height={408}
               />
               <div className="absolute left-1/2 -bottom-10 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#34D399]" />
-            </div>
+            </HeroImageMotion>
           </div>
         </div>
       </section>
@@ -211,8 +219,12 @@ export default function Home() {
           </h2>
 
           <div className="mx-auto grid max-w-md grid-cols-1 gap-5 md:max-w-5xl md:grid-cols-3">
-            {festivalCards.map((item) => (
-              <div key={item.title} className={`rounded-lg p-8 text-center neo-border-thin ${item.bg}`}>
+            {festivalCards.map((item, index) => (
+              <StaggerRevealCard
+                key={item.title}
+                index={index}
+                className={`rounded-lg p-8 text-center neo-border-thin ${item.bg}`}
+              >
                 <div className="mb-4 flex justify-center">
                   <div className={`rounded-3xl p-2 ${item.iconBg}`}>
                     <item.icon className="h-8 w-8 text-[#424242]" />
@@ -225,17 +237,17 @@ export default function Home() {
                   {item.title}
                 </h3>
                 <p className="mt-3 text-base text-[#424242]">{item.text}</p>
-              </div>
+              </StaggerRevealCard>
             ))}
           </div>
 
           <div className="mt-9 text-center">
-            <Link
+            <AnimatedLink
               href="/programme"
               className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-white px-8 text-base font-normal text-[#424242] neo-border-thin neo-shadow"
             >
               Voir le programme complet
-            </Link>
+            </AnimatedLink>
           </div>
         </div>
       </section>
@@ -295,12 +307,12 @@ export default function Home() {
                 Un lieu unique à Rouen, ancienne friche SNCF transformée en espace culturel et citoyen.
               </p>
 
-              <Link
+              <AnimatedLink
                 href="/infos-pratiques"
                 className="neo-hover mx-auto mt-8 inline-flex h-14 items-center justify-center rounded-lg bg-[#FCD34D] px-8 text-base font-bold text-[#424242] neo-border-thin neo-shadow lg:mx-0"
               >
                 Voir les infos pratiques
-              </Link>
+              </AnimatedLink>
             </div>
           </div>
         </div>
