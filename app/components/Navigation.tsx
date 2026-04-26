@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const navItems = [
   { path: "/", label: "Accueil" },
@@ -56,15 +56,33 @@ export function Navigation() {
             ))}
           </div>
 
-          <button
+          <motion.button
             onClick={() => setIsOpen((prev) => !prev)}
             className="rounded-lg bg-white p-2 neo-border-thin hover:bg-[#f5f5f5] xl:hidden"
             aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={isOpen}
             aria-controls="menu-mobile"
+            whileTap={{ scale: 0.94 }}
+            transition={{ type: "spring", stiffness: 420, damping: 24 }}
           >
-            {isOpen ? <X size={24} className="text-[#44403C]" /> : <Menu size={24} className="text-[#44403C]" />}
-          </button>
+            <div className="relative h-6 w-6">
+              <motion.span
+                className="absolute right-0 left-0 top-1 h-0.5 rounded-full bg-[#44403C]"
+                animate={isOpen ? { y: 8, rotate: 45 } : { y: 0, rotate: 0 }}
+                transition={{ type: "spring", stiffness: 460, damping: 30 }}
+              />
+              <motion.span
+                className="absolute right-0 left-0 top-1/2 h-0.5 -translate-y-1/2 rounded-full bg-[#44403C]"
+                animate={isOpen ? { opacity: 0, scaleX: 0.2 } : { opacity: 1, scaleX: 1 }}
+                transition={{ duration: 0.16, ease: "easeOut" }}
+              />
+              <motion.span
+                className="absolute right-0 left-0 top-5 h-0.5 rounded-full bg-[#44403C]"
+                animate={isOpen ? { y: -8, rotate: -45 } : { y: 0, rotate: 0 }}
+                transition={{ type: "spring", stiffness: 460, damping: 30 }}
+              />
+            </div>
+          </motion.button>
         </div>
 
         {isOpen && (
