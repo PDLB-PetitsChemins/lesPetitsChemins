@@ -17,7 +17,11 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
+import {
+  AnimatedLink,
+  HeroImageMotion,
+  StaggerRevealCard,
+} from "../components/MotionPrimitives";
 import { defaultOgImage } from "../lib/seo";
 
 export const metadata: Metadata = {
@@ -122,14 +126,14 @@ const afternoonCards: AfternoonCard[] = [
   {
     title: "Stands citoyens",
     description:
-      "Tenus par les personnes accompagnées et les professionnels : découvrez leurs actions sur le territoire.",
+      "Tenus par les personnes accompagnées et les professionnels : découvrez leurs actions sur le territoire : bénevolat, développement durable, exposition, etc.",
     icon: MessageSquare,
     bg: "bg-white",
     iconBg: "bg-[#FCD34D]",
   },
   {
-    title: "Animations Quartier Libre",
-    description: "Réparation de vélo, jardinage, friperie, couture.",
+    title: "Animations tout l'après-midi",
+    description: "Atelier musical, zumba, pétanque, réparation de vélo, atelier photo, etc.",
     icon: Bike,
     bg: "bg-white",
     iconBg: "bg-[#FCD34D]",
@@ -221,7 +225,7 @@ export default function ProgrammePage() {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mt-14 max-w-4xl text-center md:mt-16">
-            <div className="relative mx-auto w-fit">
+            <HeroImageMotion className="relative mx-auto w-fit">
               <Sparkles
                 className="absolute -left-12 top-8 h-7 w-7 -rotate-12 text-[#FCD34D] md:-left-16 md:top-10 md:h-9 md:w-9"
                 aria-hidden
@@ -246,7 +250,7 @@ export default function ProgrammePage() {
                   2026
                 </p>
               </div>
-            </div>
+            </HeroImageMotion>
 
             <h1 className="mt-8 text-4xl font-black text-[#424242] md:text-6xl">
               Programme de la journée
@@ -301,9 +305,10 @@ export default function ProgrammePage() {
 
           <div className="mt-8 rounded-2xl bg-white p-4 neo-border-thin md:p-6">
             <div className="space-y-4">
-              {timelineItems.map((item) => (
-                <article
+              {timelineItems.map((item, index) => (
+                <StaggerRevealCard
                   key={item.time}
+                  index={index}
                   className={`rounded-2xl p-4 neo-border-thin ${item.rowBg}`}
                 >
                   <div className="flex items-start gap-4">
@@ -319,7 +324,7 @@ export default function ProgrammePage() {
                       </p>
                     </div>
                   </div>
-                </article>
+                </StaggerRevealCard>
               ))}
             </div>
           </div>
@@ -344,9 +349,10 @@ export default function ProgrammePage() {
           </h2>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {afternoonCards.map((card) => (
-              <article
+            {afternoonCards.map((card, index) => (
+              <StaggerRevealCard
                 key={card.title}
+                index={index}
                 className={`rounded-2xl p-8 neo-border-thin ${card.bg} ${
                   card.title.includes("DJ") ? "md:col-span-2" : ""
                 }`}
@@ -362,7 +368,7 @@ export default function ProgrammePage() {
                 <p className="mt-2 text-center text-base text-[#424242] md:text-left">
                   {card.description}
                 </p>
-              </article>
+              </StaggerRevealCard>
             ))}
           </div>
         </div>
@@ -375,9 +381,10 @@ export default function ProgrammePage() {
           </h2>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            {audienceCards.map((card) => (
-              <article
+            {audienceCards.map((card, index) => (
+              <StaggerRevealCard
                 key={card.title}
+                index={index}
                 className={`rounded-2xl p-8 neo-border-thin ${card.bg}`}
               >
                 <div className="mb-5 flex items-center justify-center gap-3 md:justify-start">
@@ -402,7 +409,7 @@ export default function ProgrammePage() {
                     </div>
                   ))}
                 </div>
-              </article>
+              </StaggerRevealCard>
             ))}
           </div>
         </div>
@@ -417,15 +424,15 @@ export default function ProgrammePage() {
           </h2>
 
           <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {comfortItems.map((item) => (
-              <div key={item.label} className="text-center">
+            {comfortItems.map((item, index) => (
+              <StaggerRevealCard key={item.label} index={index} className="text-center">
                 <div className="mx-auto w-fit rounded-[40px] bg-white p-6 neo-border-thin">
                   <item.icon className="h-8 w-8 text-[#424242]" />
                 </div>
                 <p className="mt-3 text-lg font-bold text-[#424242]">
                   {item.label}
                 </p>
-              </div>
+              </StaggerRevealCard>
             ))}
           </div>
         </div>
@@ -443,12 +450,12 @@ export default function ProgrammePage() {
             </p>
 
             <div className="mt-8">
-              <Link
+              <AnimatedLink
                 href="/inscription"
                 className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-[#F87171] px-8 text-base font-extrabold text-[#424242] neo-border-thin neo-shadow"
               >
                 Je m&apos;inscris gratuitement
-              </Link>
+              </AnimatedLink>
             </div>
           </div>
         </div>

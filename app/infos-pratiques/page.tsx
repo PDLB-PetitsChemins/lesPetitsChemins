@@ -11,8 +11,12 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ImageWithFallback } from "../components/ImageWithFallback";
+import {
+  AnimatedLink,
+  HeroImageMotion,
+  StaggerRevealCard,
+} from "../components/MotionPrimitives";
 import { defaultOgImage } from "../lib/seo";
 
 export const metadata: Metadata = {
@@ -155,7 +159,7 @@ export default function InfosPratiquesPage() {
       <section className="border-b-[6px] border-dotted border-[#F87171] bg-[#FFF5E6] pb-14 pt-8 md:pb-20 md:pt-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
-            <div className="relative mx-auto w-full max-w-xl self-start lg:mx-0 lg:max-w-none">
+            <HeroImageMotion className="relative mx-auto w-full max-w-xl self-start lg:mx-0 lg:max-w-none">
               <div className="absolute left-1/2 -top-8 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#FCD34D]" />
               <ImageWithFallback
                 src="/quartier_libre_entree.png"
@@ -165,7 +169,7 @@ export default function InfosPratiquesPage() {
                 height={304}
               />
               <div className="absolute left-1/2 -bottom-8 z-20 h-16 w-16 -translate-x-1/2 rounded-full bg-[#34D399]" />
-            </div>
+            </HeroImageMotion>
 
             <div className="rounded-2xl bg-white p-6 neo-border-thin">
               <div className="flex items-center gap-3">
@@ -209,9 +213,10 @@ export default function InfosPratiquesPage() {
           </h2>
 
           <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
-            {transportCards.map((card) => (
-              <article
+            {transportCards.map((card, index) => (
+              <StaggerRevealCard
                 key={card.title}
+                index={index}
                 className={`rounded-2xl p-8 neo-border-thin ${card.bg}`}
               >
                 <div
@@ -230,7 +235,7 @@ export default function InfosPratiquesPage() {
                     </p>
                   ))}
                 </div>
-              </article>
+              </StaggerRevealCard>
             ))}
           </div>
         </div>
@@ -243,9 +248,10 @@ export default function InfosPratiquesPage() {
           </h2>
 
           <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
-            {accessibilityCards.map((card) => (
-              <article
+            {accessibilityCards.map((card, index) => (
+              <StaggerRevealCard
                 key={card.title}
+                index={index}
                 className={`rounded-2xl p-8 neo-border-thin ${card.bg}`}
               >
                 <div
@@ -282,7 +288,7 @@ export default function InfosPratiquesPage() {
                     )}
                   </div>
                 )}
-              </article>
+              </StaggerRevealCard>
             ))}
           </div>
         </div>
@@ -322,8 +328,8 @@ export default function InfosPratiquesPage() {
           </h2>
 
           <div className="mt-10 space-y-6">
-            {faqItems.map((item) => (
-              <article key={item.question} className="rounded-2xl">
+            {faqItems.map((item, index) => (
+              <StaggerRevealCard key={item.question} index={index} className="rounded-2xl">
                 <div
                   className={`flex items-center justify-between gap-4 rounded-t-2xl px-8 py-4 neo-border-thin ${
                     item.highlight ? "bg-[#F87171]" : "bg-[#FCD34D]"
@@ -342,17 +348,17 @@ export default function InfosPratiquesPage() {
                 <div className="rounded-b-2xl bg-white px-8 py-6 neo-border-thin">
                   <p className="text-base text-[#424242]">{item.answer}</p>
                 </div>
-              </article>
+              </StaggerRevealCard>
             ))}
           </div>
 
           <div className="mt-10 text-center">
-            <Link
+            <AnimatedLink
               href="/inscription"
               className="neo-hover inline-flex h-14 items-center justify-center rounded-lg bg-[#F87171] px-8 text-base font-extrabold text-[#424242] neo-border-thin neo-shadow"
             >
               Je m&apos;inscris gratuitement
-            </Link>
+            </AnimatedLink>
           </div>
         </div>
       </section>
