@@ -4,11 +4,13 @@ import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 
+import type { AnchorHTMLAttributes } from "react";
+
 type AnimatedLinkProps = {
   href: string;
   className: string;
   children: ReactNode;
-};
+} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "className" | "children">;
 
 type MotionBoxProps = {
   className?: string;
@@ -24,12 +26,17 @@ type StaggerRevealCardProps = MotionBoxProps & {
   index: number;
 };
 
-export function AnimatedLink({ href, className, children }: AnimatedLinkProps) {
+export function AnimatedLink({
+  href,
+  className,
+  children,
+  ...rest
+}: AnimatedLinkProps) {
   const shouldReduceMotion = useReducedMotion();
 
   if (shouldReduceMotion) {
     return (
-      <Link href={href} className={className}>
+      <Link href={href} className={className} {...rest}>
         {children}
       </Link>
     );
@@ -41,7 +48,7 @@ export function AnimatedLink({ href, className, children }: AnimatedLinkProps) {
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 380, damping: 20 }}
     >
-      <Link href={href} className={className}>
+      <Link href={href} className={className} {...rest}>
         {children}
       </Link>
     </motion.div>

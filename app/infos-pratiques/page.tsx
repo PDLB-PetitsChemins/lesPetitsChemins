@@ -203,6 +203,47 @@ export default function InfosPratiquesPage() {
               </div>
             </div>
           </div>
+
+        </div>
+      </section>
+
+      <section
+        id="plan"
+        className="border-b-[6px] border-dotted border-[#F87171] bg-white py-12 md:py-16"
+      >
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-extrabold text-[#424242] md:text-5xl">
+            Plan du Quartier Libre
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-base font-semibold text-[#424242] md:text-lg">
+            Reperez les lieux, les activites et les horaires sur le plan.
+          </p>
+
+          <div className="mx-auto mt-8 max-w-4xl rounded-2xl bg-[#FFF5E6] p-4 neo-border-thin">
+            <ImageWithFallback
+              src="/Axo-Le-Quartier-Libre-2026-A4.png"
+              alt="Plan du Quartier Libre"
+              className="w-full object-contain"
+            />
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <AnimatedLink
+              href="/Axo-Le-Quartier-Libre-2026-A4.png"
+              className="neo-hover inline-flex h-12 items-center justify-center rounded-lg bg-[#FCD34D] px-6 text-sm font-bold text-[#424242] neo-border-thin neo-shadow"
+              download="plan-quartier-libre-2026.png"
+            >
+              Telecharger le plan
+            </AnimatedLink>
+            <AnimatedLink
+              href="/Axo-Le-Quartier-Libre-2026-A4.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="neo-hover inline-flex h-12 items-center justify-center rounded-lg bg-white px-6 text-sm font-bold text-[#424242] neo-border-thin"
+            >
+              Ouvrir en grand
+            </AnimatedLink>
+          </div>
         </div>
       </section>
 
@@ -273,14 +314,14 @@ export default function InfosPratiquesPage() {
 
                 {card.ctaHref && card.ctaLabel && (
                   <div className="mt-5 text-center">
-                    <a
+                    <AnimatedLink
                       href={card.ctaHref}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="neo-hover inline-flex h-11 items-center justify-center rounded-lg bg-[#FCD34D] px-5 text-sm font-bold text-[#424242] neo-border-thin neo-shadow"
                     >
                       {card.ctaLabel}
-                    </a>
+                    </AnimatedLink>
                     {card.ctaNote && (
                       <p className="mt-2 text-center text-sm font-semibold text-[#424242]">
                         {card.ctaNote}

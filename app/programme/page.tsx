@@ -17,6 +17,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { ImageWithFallback } from "../components/ImageWithFallback";
 import {
   AnimatedLink,
   HeroImageMotion,
@@ -370,6 +371,51 @@ export default function ProgrammePage() {
                 </p>
               </StaggerRevealCard>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b-[6px] border-dotted border-[#F87171] bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+            <div className="rounded-2xl bg-white p-6 neo-border-thin">
+              <div className="flex items-center gap-3">
+                <span className="rounded-2xl bg-[#C4B5FD] p-2.5">
+                  <MapPin className="h-6 w-6 text-[#424242]" />
+                </span>
+                <h2 className="text-2xl font-extrabold text-[#424242]">
+                  Plan du site
+                </h2>
+              </div>
+
+              <p className="mt-3 text-base font-semibold text-[#424242]">
+                Un coup d&apos;oeil pour reperer les lieux et activites.
+              </p>
+
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <AnimatedLink
+                  href="/infos-pratiques#plan"
+                  className="neo-hover inline-flex h-12 items-center justify-center rounded-lg bg-[#FCD34D] px-6 text-sm font-bold text-[#424242] neo-border-thin neo-shadow"
+                >
+                  Voir le plan du site
+                </AnimatedLink>
+                <a
+                  href="/Axo-Le-Quartier-Libre-2026-A4.png"
+                  download="plan-quartier-libre-2026.png"
+                  className="neo-hover inline-flex h-12 items-center justify-center rounded-lg bg-white px-6 text-sm font-bold text-[#424242] neo-border-thin"
+                >
+                  Telecharger le plan
+                </a>
+              </div>
+            </div>
+
+            <div className="rounded-lg bg-[#FFF5E6] p-3 neo-border-thin">
+              <ImageWithFallback
+                src="/Axo-Le-Quartier-Libre-2026-A4.png"
+                alt="Apercu du plan du Quartier Libre"
+                className="w-full max-h-60 object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
